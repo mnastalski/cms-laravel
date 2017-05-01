@@ -16,11 +16,11 @@
     <header>
         <div class="container">
             <div class="row">
-                <div class="col-3">
+                <div class="col-3 px-0">
                     <a href="{{ route('home') }}"><img src="img/logo.png" alt="Cookie World"></a>
                 </div>
 
-                <div class="col-7">
+                <div class="col-7 px-0">
                     <nav class="nav float-right">
                         <a href="{{ route('home') }}" class="nav-link"><i class="fa fa-home align-top nav-fa" aria-hidden="true"></i>Home</a>
                         <a href="{{ route('about') }}" class="nav-link"><i class="fa fa-info-circle align-top nav-fa" aria-hidden="true"></i>About</a>
@@ -28,7 +28,7 @@
                     </nav>
                 </div>
 
-                <div class="col-2">
+                <div class="col-2 px-0">
                     <a class="float-right lang-select">
                         Polski<span class="flag-icon flag-icon-pl align-top"></span><i class="fa fa-caret-down align-top" style="margin-top: 1px" aria-hidden="true"></i>
                     </a>
@@ -37,17 +37,16 @@
         </div>
     </header>
 
-    <div style="background-color: #7f5817; border-top: 1px solid #372200; border-bottom: 1px solid #372200; height: 92px">
-        <div class="container">
-            <img src="img/banner_logo.png" class="pull-right">
+    <div id="header-banner">
+        <div class="container" style="padding: 15px 0">
+            @section('header_banner')
+                menu here
+            @endsection
+            @yield('header_banner')
         </div>
     </div>
 
-    <div class="container">
-
-        @yield('content')
-
-    </div>
+    @yield('content')
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
