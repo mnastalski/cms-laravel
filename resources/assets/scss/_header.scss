@@ -1,0 +1,37 @@
+header {
+  background-color: #fbfbfb;
+  padding: 7px;
+
+  .nav {
+    margin-top: 13px;
+
+    .nav-link {
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+
+      .nav-fa {
+        font-size: 13px;
+        margin: 4px 6px 0 0;
+      }
+    }
+  }
+
+  .lang-select {
+    display: block;
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 15px;
+    padding: 6px 0;
+    text-align: center;
+    width: 90px;
+
+    .flag-icon {
+      border: 1px solid #aaaaaa;
+      border-radius: 2px;
+      font-size: 14px;
+      line-height: 13px;
+      margin: 0 6px;
+    }
+  }
+}
