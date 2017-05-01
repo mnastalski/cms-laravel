@@ -11,3 +11,7 @@ npm-debug.log
 .env
 composer.lock
 notes.txt
+
+/public/css/*
+!/public/css/flag-icon.min.css
+!/public/css/font-awesome.min.css
