@@ -7,7 +7,8 @@
     <title>@yield('title', 'Cookie World')</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/flag-icon.min.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.min.css">
     @yield('css')
 </head>
 <body>
@@ -29,7 +30,7 @@
 
                 <div class="col-2">
                     <a class="float-right lang-select">
-                        Polski<span class="flag-icon flag-icon-pl align-top" style="margin-top: 1px"></span><i class="fa fa-caret-down align-top" style="margin-top: 2px" aria-hidden="true"></i>
+                        Polski<span class="flag-icon flag-icon-pl align-top"></span><i class="fa fa-caret-down align-top" style="margin-top: 1px" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
@@ -51,7 +52,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    <script src="https://use.fontawesome.com/b0df2504d8.js"></script>
     @yield('js')
 
 </body>
