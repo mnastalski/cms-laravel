@@ -1,5 +1,4 @@
-@extends('base')
+@extends('errors.error')
 
-@section('content')
-    Problem
-@endsection
+@section('error_code', '500')
+@section('error_descr', 'Internal server error')

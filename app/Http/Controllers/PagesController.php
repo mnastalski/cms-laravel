@@ -11,6 +11,6 @@ class PagesController
 
     public function error()
     {
-        return view('errors.404');
+        return view('errors.500');
     }
 }

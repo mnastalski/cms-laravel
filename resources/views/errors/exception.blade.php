@@ -1,7 +1,9 @@
-@extends('base')
+@extends('errors.error')
 
-@section('content')
+@section('error')
 
-Error. Please contact us if this message keeps appearing.
+    <div class="text-center">
+        Error. Please contact us if this message keeps appearing.
+    </div>
 
 @endsection

@@ -1,5 +1,4 @@
-@extends('base')
+@extends('errors.error')
 
-@section('content')
-    Page not found :(
-@endsection
+@section('error_code', '404')
+@section('error_descr', 'Page not found')
