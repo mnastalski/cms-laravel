@@ -15,3 +15,7 @@ Route::get('/', 'HomepageController@index')->name('home');
 
 Route::get('about', 'PagesController@about')->name('about');
 Route::get('contact', 'PagesController@contact')->name('contact');
+
+
+// for error pages testing purposes
+Route::get('error', 'PagesController@error');
