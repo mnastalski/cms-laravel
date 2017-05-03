@@ -32,45 +32,45 @@ button[type="submit"] {
   position: absolute;
   top: 27%;
   width: 100%;
+}
 
-  .login-box {
-    background-color: $bg-color-darker;
-    box-shadow: 0 0 2px 0 rgba(255, 255, 255, 0.25);
+.login-box {
+  background-color: $bg-color-darker;
+  box-shadow: 0 0 2px 0 rgba(255, 255, 255, 0.25);
+}
 
-    .login-logo {
-      margin: 10px 0;
-    }
+.login-logo {
+  margin: 10px 0;
+}
 
-    form {
-      padding: 20px 40px;
+.login-form {
+  padding: 20px 40px;
+}
 
-      .input-group {
-        margin: 15px 0;
+.input-group {
+  margin: 15px 0;
+}
 
-        .input-group-addon {
-          background-color: $field-bg-color;
-          border-color: $field-border-color;
-          color: $field-color;
-        }
+.input-group-addon {
+  background-color: $field-bg-color;
+  border-color: $field-border-color;
+  color: $field-color;
 
-        .input-group-addon .fa {
-          color: $field-placeholder-color;
-          font-size: 14px;
-        }
+  .fa {
+    color: $field-placeholder-color;
+    font-size: 14px;
+  }
+}
 
-        input[type="text"], input[type="password"] {
-          @extend .input-group-addon;
+input[type="text"], input[type="password"] {
+  @extend .input-group-addon;
 
-          font-size: 12px;
-        }
+  font-size: 12px;
 
-        input[type="text"]:focus, input[type="password"]:focus {
-          background-color: lighten($field-bg-color, 5%);
-          border-color: $field-focus-border-color;
-          box-shadow: 0 0 5px darken($field-focus-border-color, 5%);
-          color: $field-color;
-        }
-      }
-    }
+  &:focus {
+    background-color: lighten($field-bg-color, 5%);
+    border-color: $field-focus-border-color;
+    box-shadow: 0 0 5px darken($field-focus-border-color, 5%);
+    color: $field-color;
   }
 }
