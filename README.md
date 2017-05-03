@@ -2,6 +2,8 @@
 
 &copy; Mateusz Nastalski
 
-## Screenshot
+## Preview
 
 ![screen](http://i.imgur.com/Yda8l95.png)
+
+![screen](http://i.imgur.com/bb4Jk96.png)
