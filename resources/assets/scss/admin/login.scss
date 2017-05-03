@@ -8,6 +8,15 @@ $field-border-color: #414141;
 $field-focus-border-color: #5f4c4c;
 $field-placeholder-color: #414141;
 
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 html, body {
   height: 100%;
 }
@@ -29,6 +38,7 @@ button[type="submit"] {
 }
 
 .login-container {
+  animation: appear 1s;
   position: absolute;
   top: 27%;
   width: 100%;
@@ -72,5 +82,19 @@ input[type="text"], input[type="password"] {
     border-color: $field-focus-border-color;
     box-shadow: 0 0 5px darken($field-focus-border-color, 5%);
     color: $field-color;
+  }
+}
+
+.copyright {
+  color: $color-gray;
+  font-size: 70%;
+  padding: 12px 0;
+
+  a {
+    color: $color-blue-light;
+
+    &:hover {
+      color: darken($color-blue-light, 10%);
+    }
   }
 }

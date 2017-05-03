@@ -33,12 +33,14 @@
 
             </div>
         </div>
+        <div class="copyright text-center">
+            <a href="mailto:mail@mail.com">Mateusz Nastalski</a> &copy; 2017
+        </div>
     </div>
 @endsection
 
 @section('js')
     <script type="text/javascript">
-        $('.login-box').hide().fadeIn(900);
         $('input[name="username"]').focus();
     </script>
 @endsection
