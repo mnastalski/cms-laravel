@@ -1,17 +1,16 @@
-header {
+.header-nav {
   background-color: #fbfbfb;
-  padding: 7px 0 8px;
 
-  .nav {
-    margin-top: 13px;
-
+  nav {
     a {
+      display: inline-block;
       font-size: 14px;
       font-weight: bold;
+      padding: 6px 8px;
       text-transform: uppercase;
 
       .nav-fa {
-        font-size: 13px;
+        font-size: 14px;
         margin: 4px 6px 0 0;
       }
     }
@@ -21,17 +20,30 @@ header {
     cursor: pointer;
     display: block;
     font-size: 12px;
-    margin-top: 15px;
-    padding: 6px 0;
-    text-align: center;
-    width: 90px;
+    //margin-top: 14px;
+    padding: 6px 0 6px 10px;
+    //text-align: center;
+    //width: 90px;
+
+    .fa {
+      margin-top: 1px;
+    }
   }
 
-  .flag-icon {
-    border: 1px solid #aaaaaa;
-    border-radius: 2px;
-    font-size: 14px;
-    line-height: 13px;
-    margin: 0 6px;
+  .logo {
+    margin: 6px 0 7px 0;
   }
+}
+
+.navbar-toggler {
+  border: 1px solid $border-color-brown;
+  margin: 14px 20px 0 0;
+}
+
+.flag-icon {
+  border: 1px solid #aaaaaa;
+  border-radius: 2px;
+  font-size: 14px;
+  line-height: 13px;
+  margin: 0 6px;
 }
