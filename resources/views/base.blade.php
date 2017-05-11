@@ -13,24 +13,24 @@
 </head>
 <body>
 
-    <header>
+    <header class="container-fluid header-nav sticky-top">
         <div class="container">
             <div class="row">
-                <div class="col-3 px-0">
-                    <a href="{{ route('home') }}"><img src="img/logo.png" alt="Cookie World"></a>
+                <div class="col-3 col-md-4">
+                    <a href="{{ route('home') }}"><img class="img-fluid logo" src="{{ asset('img/logo.png') }}" alt="Cookie World"></a>
                 </div>
 
-                <div class="col-7 px-0">
-                    <nav class="nav float-right">
-                        <a href="{{ route('home') }}" class="nav-link"><i class="fa fa-home align-top nav-fa" aria-hidden="true"></i>Home</a>
-                        <a href="{{ route('about') }}" class="nav-link"><i class="fa fa-info-circle align-top nav-fa" aria-hidden="true"></i>About</a>
-                        <a href="{{ route('contact') }}" class="nav-link"><i class="fa fa-envelope-o align-top nav-fa" aria-hidden="true"></i>Contact</a>
+                <div class="col-8 col-md-6 px-0 vcenter">
+                    <nav class="text-right align-middle">
+                        <a href="{{ route('home') }}"><i class="fa fa-home align-top nav-fa" aria-hidden="true"></i>Home</a>
+                        <a href="{{ route('about') }}"><i class="fa fa-info-circle align-top nav-fa" aria-hidden="true"></i>About</a>
+                        <a href="{{ route('contact') }}"><i class="fa fa-envelope-o align-top nav-fa" aria-hidden="true"></i>Contact</a>
                     </nav>
                 </div>
 
-                <div class="col-2 px-0">
+                <div class="col-1 col-md-2 px-0 mx-0 vcenter">
                     <a class="float-right lang-select">
-                        Polski<span class="flag-icon flag-icon-pl align-top"></span><i class="fa fa-caret-down align-top" style="margin-top: 1px" aria-hidden="true"></i>
+                        Polski<span class="flag-icon flag-icon-pl align-top"></span><i class="fa fa-caret-down align-top hidden-sm-down" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
@@ -38,7 +38,7 @@
     </header>
 
     <div id="header-banner">
-        <div class="container" style="padding: 15px 0">
+        <div class="container">
             @section('header_banner')
                 menu here
             @endsection

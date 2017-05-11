@@ -16,8 +16,10 @@
         <div class="row justify-content-center">
             <div class="col-10 col-sm-7 col-md-5 col-lg-4 col-xl-3 text-center text-uppercase login-box">
 
-                <form class="login-form">
-                    <a href="/admin"><img src="{{ asset('img/logo_admin.png') }}" class="img-fluid login-logo" style="height: 144px; width: 218px"></a>
+                <form method="post" class="login-form">
+                    {{ csrf_field() }}
+
+                    <a href="/admin"><img src="{{ asset('img/logo_admin.png') }}" class="img-fluid login-logo"></a>
 
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>

@@ -8,17 +8,22 @@ $field-border-color: #414141;
 $field-focus-border-color: #5f4c4c;
 $field-placeholder-color: #414141;
 
-@keyframes appear {
+@keyframes slideIn {
   0% {
     opacity: 0;
+    top: -100px;
+  }
+  60% {
+    opacity: 1;
   }
   100% {
-    opacity: 1;
+    top: 27%;
   }
 }
 
 html, body {
   height: 100%;
+  overflow: hidden;
 }
 
 button[type="submit"] {
@@ -38,7 +43,7 @@ button[type="submit"] {
 }
 
 .login-container {
-  animation: appear 1s;
+  animation: slideIn 1s;
   position: absolute;
   top: 27%;
   width: 100%;
@@ -50,7 +55,9 @@ button[type="submit"] {
 }
 
 .login-logo {
+  height: 144px;
   margin: 10px 0;
+  width: 218px;
 }
 
 .login-form {
