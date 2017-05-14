@@ -1,12 +1,6 @@
-@import 'colors';
+@import 'colors_admin';
 
 $bg-ratio: 45%;
-
-$field-color: #e0e0e0;
-$field-bg-color: #0a0a0a;
-$field-border-color: #414141;
-$field-focus-border-color: #5f4c4c;
-$field-placeholder-color: #414141;
 
 @keyframes slideIn {
   0% {
@@ -22,8 +16,7 @@ $field-placeholder-color: #414141;
 }
 
 html, body {
-  height: 100%;
-  overflow: hidden;
+  //overflow: hidden;
 }
 
 button[type="submit"] {
@@ -31,7 +24,7 @@ button[type="submit"] {
 }
 
 .body-half-1 {
-  background-color: $bg-color-gray;
+  background-color: $color-gray-light;
   height: $bg-ratio;
   min-height: $bg-ratio;
 }
@@ -50,13 +43,13 @@ button[type="submit"] {
 }
 
 .login-box {
-  background-color: $bg-color-darker;
+  background-color: darken($bg-color-dark, 3.9%);
   box-shadow: 0 0 2px 0 rgba(255, 255, 255, 0.25);
 }
 
 .login-logo {
   height: 144px;
-  margin: 10px 0;
+  margin: 25px 0 0;
   width: 218px;
 }
 
@@ -65,16 +58,16 @@ button[type="submit"] {
 }
 
 .input-group {
-  margin: 15px 0;
+  margin: 10px 0;
 }
 
 .input-group-addon {
   background-color: $field-bg-color;
-  border-color: $field-border-color;
-  color: $field-color;
+  border-color: $color-gray-mid;
+  color: $color-gray-light;
 
   .fa {
-    color: $field-placeholder-color;
+    color: $color-gray-mid;
     font-size: 14px;
   }
 }
@@ -88,20 +81,19 @@ input[type="text"], input[type="password"] {
     background-color: lighten($field-bg-color, 5%);
     border-color: $field-focus-border-color;
     box-shadow: 0 0 5px darken($field-focus-border-color, 5%);
-    color: $field-color;
+    color: $color-gray-light;
   }
 }
 
+button[type="submit"] {
+  margin: 5px 0 0;
+}
+
+.alert {
+  margin: -5px 0 20px;
+  padding: 6px;
+}
+
 .copyright {
-  color: $color-gray;
-  font-size: 70%;
   padding: 12px 0;
-
-  a {
-    color: $color-blue-light;
-
-    &:hover {
-      color: darken($color-blue-light, 10%);
-    }
-  }
 }

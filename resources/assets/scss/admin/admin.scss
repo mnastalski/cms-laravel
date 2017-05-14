@@ -1,1 +1,88 @@
-@import 'colors';
+@import 'colors_admin';
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: $bg-color-dark;
+  color: $color-gray-light;
+}
+
+a {
+  color: $color-blue-light;
+
+  &:hover {
+    color: darken($color-blue-light, 8%);
+    text-decoration: none;
+  }
+}
+
+#admin-container {
+  min-height: 100%;
+  position: relative;
+}
+
+header {
+  background-color: $field-bg-color;
+  padding: 10px 15px;
+  width: 100%;
+
+  .logout {
+    font-weight: bold;
+    font-size: 12px;
+
+    .fa {
+      margin-left: 5px;
+    }
+  }
+}
+
+.page-container {
+  width: 100%;
+}
+
+$page-menu-width: 12%;
+
+.page-menu {
+  float: left;
+  height: 100%;
+  margin-top: 15px;
+  position: fixed;
+  width: $page-menu-width;
+}
+
+.page-menu-list {
+  background-color: $field-bg-color;
+
+  a {
+    display: block;
+    padding: 6px 12px;
+    width: 100%;
+
+    &:hover {
+      background-color: lighten($field-bg-color, 15%);
+    }
+
+    .fa {
+      margin: 0 8px 0 0;
+    }
+  }
+}
+
+.content-container {
+  float: right;
+  padding: 10px 20px;
+  width: 100% - $page-menu-width;
+}
+
+
+
+footer {
+  background-color: $field-bg-color;
+  bottom: 0;
+  padding: 5px 10px;
+  position: fixed;
+  right: 0;
+  text-align: right;
+}

@@ -14,16 +14,24 @@
 
     <div class="container-fluid login-container">
         <div class="row justify-content-center">
-            <div class="col-10 col-sm-7 col-md-5 col-lg-4 col-xl-3 text-center text-uppercase login-box">
+            <div class="col-10 col-sm-7 col-md-5 col-lg-4 col-xl-3 text-center login-box">
 
-                <form method="post" class="login-form">
+                <a href="{{ route('admin_login') }}"><img src="{{ asset('img/logo_admin.png') }}" class="img-fluid login-logo"></a>
+
+                <form method="post" action="{{ route('admin_login_post') }}" class="login-form">
                     {{ csrf_field() }}
 
-                    <a href="/admin"><img src="{{ asset('img/logo_admin.png') }}" class="img-fluid login-logo"></a>
+                    @if ($errors->any())
+                        <ul class="alert alert-danger alert-dismissible fade show list-unstyled" data-dismiss="alert" role="alert">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
 
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-                        <input type="text" name="username" class="form-control" placeholder="username" autocomplete="off">
+                        <input type="text" name="email" class="form-control" placeholder="username" autocomplete="off">
                     </div>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
@@ -35,14 +43,15 @@
 
             </div>
         </div>
-        <div class="copyright text-center">
-            <a href="mailto:mail@mail.com">Mateusz Nastalski</a> &copy; 2017
+        <div class="small copyright text-center">
+            <a href="https://github.com/mnastalski/" target="_blank">Mateusz Nastalski</a> &copy; 2017
         </div>
     </div>
 @endsection
 
 @section('js')
     <script type="text/javascript">
-        $('input[name="username"]').focus();
+        $('input[name="email"]').focus();
+        $('.alert').alert();
     </script>
 @endsection

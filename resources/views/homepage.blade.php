@@ -3,9 +3,9 @@
 @section('header_banner')
 
     <div class="row">
-        <div class="col-4 offset-1" style="color: #f9e0c7">
+        <div class="col-4 offset-1 brown-light">
             <h4>We bake and cook and bake and cook</h4>
-            <p style="font-size: 80%">We create and make and bake and cookies are great I love ice cream, at condimentum ante fringilla vel. Maecenas dapibus neque non nibh porttitor, in malesuada libero tempus. In eu pharetra metus. Duis varius arcu dapibus, interdum ipsum ac, condimentum ante.</p>
+            <p class="small">We create and make and bake and cookies are great I love ice cream, at condimentum ante fringilla vel. Maecenas dapibus neque non nibh porttitor, in malesuada libero tempus. In eu pharetra metus. Duis varius arcu dapibus, interdum ipsum ac, condimentum ante.</p>
         </div>
     </div>
 

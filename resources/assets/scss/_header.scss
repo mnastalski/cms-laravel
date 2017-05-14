@@ -4,13 +4,11 @@
   nav {
     a {
       display: inline-block;
-      font-size: 14px;
       font-weight: bold;
       padding: 6px 8px;
       text-transform: uppercase;
 
       .nav-fa {
-        font-size: 14px;
         margin: 4px 6px 0 0;
       }
     }
@@ -20,10 +18,7 @@
     cursor: pointer;
     display: block;
     font-size: 12px;
-    //margin-top: 14px;
     padding: 6px 0 6px 10px;
-    //text-align: center;
-    //width: 90px;
 
     .fa {
       margin-top: 1px;

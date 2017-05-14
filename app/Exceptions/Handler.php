@@ -2,6 +2,7 @@
 
 namespace App\Exceptions;
 
+use App;
 use Exception;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
@@ -38,13 +39,13 @@ class Handler extends ExceptionHandler
     /**
      * Render an exception into an HTTP response.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Exception  $exception
-     * @return \Illuminate\Http\Response
+     * @param \Illuminate\Http\Request $request
+     * @param Exception $exception
+     * @return \Illuminate\Http\Response|\Symfony\Component\HttpFoundation\Response
      */
     public function render($request, Exception $exception)
     {
-        if (\App::environment('local')) {
+        if (App::environment('local')) {
             return parent::render($request, $exception);
         } else {
             return response()->view('errors.exception', [], 500);
@@ -64,6 +65,6 @@ class Handler extends ExceptionHandler
             return response()->json(['error' => 'Unauthenticated.'], 401);
         }
 
-        return redirect()->guest(route('login'));
+        return redirect()->guest(route('admin_login'));
     }
 }
