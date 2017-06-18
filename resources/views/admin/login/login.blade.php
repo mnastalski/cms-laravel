@@ -3,7 +3,7 @@
 @section('title', 'Cookie World Admin Login')
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/login.min.css') }}">
+<link rel="stylesheet" href="{{ asset('css/login.css') }}">
 @endsection
 
 @section('content')

@@ -1,0 +1,27 @@
+{
+  "name": "cms-laravel",
+  "version": "1.0.0",
+  "description": "Laravel based CMS",
+  "main": "app.js",
+  "scripts": {
+    "build-dev": "gulp build:dev",
+    "build-prod": "gulp build:prod",
+    "watch": "gulp watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mnastalski/cms-laravel"
+  },
+  "author": "Mateusz Nastalski",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-strip-debug": "^1.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "merge-stream": "^1.0.1"
+  }
+}

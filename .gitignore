@@ -1,19 +1,12 @@
 /node_modules
-/public/hot
-/public/storage
 /storage/*.key
 /vendor/
 /.idea/
-/.vagrant
 Homestead.json
 Homestead.yaml
 npm-debug.log
 .env
-composer.lock
 notes.txt
 
-/resources/assets/.cache/
-
 /public/css/*
-!/public/css/flag-icon.min.css
-!/public/css/font-awesome.min.css
+/public/js/*

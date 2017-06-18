@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "mnastalski/cms-laravel",
+    "description": "Laravel based CMS",
+    "keywords": ["laravel", "cms"],
     "license": "MIT",
     "type": "project",
     "require": {
