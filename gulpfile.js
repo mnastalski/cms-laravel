@@ -11,7 +11,7 @@ var Locations = {
         sass: 'resources/assets/sass/**/*.scss',
         css_libs: 'resources/assets/sass/lib/*.css',
         js: 'resources/assets/js/*.js',
-        js_libs: 'resources/assets/js/lib/*.js'
+        js_libs: 'resources/assets/js/lib/**/*'
     },
 
     output: {
@@ -47,7 +47,6 @@ gulp.task('sass', function() {
 
 gulp.task('js:prod', function() {
     var js_libs = gulp.src([Locations.input.js_libs])
-        .pipe(rename({dirname: ''}))
         .pipe(gulp.dest(Locations.output.js));
 
     var js_src = gulp.src([Locations.input.js])
@@ -65,11 +64,9 @@ gulp.task('js:prod', function() {
 
 gulp.task('js:dev', function() {
     var js_libs = gulp.src([Locations.input.js_libs])
-        .pipe(rename({dirname: ''}))
         .pipe(gulp.dest(Locations.output.js));
 
     var js_src = gulp.src([Locations.input.js])
-        .pipe(rename({dirname: ''}))
         .pipe(gulp.dest(Locations.output.js));
 
     return merge(js_libs, js_src);
