@@ -15,6 +15,8 @@
         <div class="page-container">
             <div class="page-menu">
                 <div class="page-menu-list">
+                    {{--<div class="page-menu-caret"><i class="fa fa-angle-double-left" aria-hidden="true"></i></div>--}}
+
                     <a href="{{ route('admin_dashboard') }}"><i class="fa fa-home" aria-hidden="true"></i>Dashboard</a>
                     <a href="{{ route('admin_dashboard') }}"><i class="fa fa-question-circle" aria-hidden="true"></i>About</a>
                 </div>

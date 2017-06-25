@@ -61,7 +61,9 @@ $page-menu-width: 12%;
     width: 100%;
 
     &:hover {
-      background-color: lighten($field-bg-color, 15%);
+      border-left: lighten($color-blue-light, 10%) solid 5px;
+      color: lighten($color-blue-light, 10%);
+      background-color: lighten($field-bg-color, 10%);
     }
 
     .fa {
