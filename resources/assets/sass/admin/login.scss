@@ -62,7 +62,7 @@ button[type="submit"] {
 }
 
 .input-group-addon {
-  background-color: $field-bg-color;
+  background-color: $color-black;
   border-color: $color-gray-mid;
   color: $color-gray-light;
 
@@ -72,13 +72,13 @@ button[type="submit"] {
   }
 }
 
-input[type="text"], input[type="password"] {
+input[type="email"], input[type="password"] {
   @extend .input-group-addon;
 
   font-size: 12px;
 
   &:focus {
-    background-color: lighten($field-bg-color, 5%);
+    background-color: lighten($color-black, 5%);
     border-color: $field-focus-border-color;
     box-shadow: 0 0 5px darken($field-focus-border-color, 5%);
     color: $color-gray-light;

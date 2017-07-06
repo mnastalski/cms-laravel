@@ -1,0 +1,44 @@
+/* Tables */
+
+.table {
+
+  thead,
+  tbody,
+  th,
+  td {
+    border-color: $color-black-mid !important;
+  }
+}
+
+.table thead {
+  background-color: $color-black;
+}
+
+.table-bordered {
+  border-color: $color-black-mid !important;
+}
+
+.table-striped {
+  tbody tr:nth-of-type(odd) {
+    background-color: lighten($bg-color-dark, 1%);
+  }
+
+  tbody tr:nth-of-type(even) {
+    background-color: lighten($color-black, 10%);
+  }
+}
+
+.table th:last-of-type {
+  width: 126px;
+}
+
+
+/* Buttons */
+
+a.btn {
+  color: $color-gray-light;
+
+  &:focus {
+    color: $color-gray-light;
+  }
+}

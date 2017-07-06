@@ -31,7 +31,7 @@
 
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-                        <input type="text" name="email" class="form-control" placeholder="username" autocomplete="off">
+                        <input type="email" name="email" class="form-control" placeholder="username" autocomplete="off" autofocus>
                     </div>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
@@ -51,7 +51,6 @@
 
 @section('js')
     <script type="text/javascript">
-        $('input[name="email"]').focus();
         $('.alert').alert();
     </script>
 @endsection

@@ -1,14 +1,15 @@
 <?php
+
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Auth;
 
 class LoginController extends \App\Http\Controllers\Auth\LoginController
 {
     public function redirectTo()
     {
-         return route('admin_dashboard');
+        return route('admin.dashboard');
     }
 
     public function showLoginForm()
@@ -16,10 +17,10 @@ class LoginController extends \App\Http\Controllers\Auth\LoginController
         return view('admin.login.login');
     }
 
-//    public function logout(Request $request)
-//    {
-//        Auth::guard($this->getGuard())->logout();
-//
-//        return redirect()->route('admin_login');
-//    }
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        return redirect()->route('admin_login');
+    }
 }

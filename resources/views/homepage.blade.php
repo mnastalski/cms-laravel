@@ -21,7 +21,7 @@
 
             <div class="col-3">
                 <div class="item-group">
-                    <img class="img-fluid" src="img/categories/1.png" alt="Cookies">
+                    <img class="img-fluid" src="{{ asset('img/categories/1.png') }}" alt="Cookies">
                     <div class="item-group-label">
                         <a href="#" class="btn btn-primary btn-brown">Check</a>
                     </div>
@@ -30,7 +30,7 @@
 
             <div class="col-3">
                 <div class="item-group">
-                    <img class="img-fluid" src="img/categories/2.png" alt="Cookies">
+                    <img class="img-fluid" src="{{ asset('img/categories/2.png') }}" alt="Cookies">
                     <div class="item-group-label">
                         <a href="#" class="btn btn-primary btn-brown">Check</a>
                     </div>
@@ -39,7 +39,7 @@
 
             <div class="col-3">
                 <div class="item-group">
-                    <img class="img-fluid" src="img/categories/3.png" alt="Cookies">
+                    <img class="img-fluid" src="{{ asset('img/categories/3.png') }}" alt="Cookies">
                     <div class="item-group-label">
                         <a href="#" class="btn btn-primary btn-brown">Check</a>
                     </div>
