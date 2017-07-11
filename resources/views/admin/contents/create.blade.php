@@ -3,7 +3,7 @@
 @section('header', 'Add content section')
 
 @section('content_container')
-    {!! BootForm::open(['route' => ['admin.contents.store', $model_data->id], 'model' => $model_data]) !!}
+    {!! BootForm::open(['model' => $model_data]) !!}
 
     {!! BootForm::text('key') !!}
 
