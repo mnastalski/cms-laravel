@@ -39,6 +39,22 @@ class AdminUtil
     {
         return self::btn($url, $icon, false, ['class' => 'btn-panel'], $label);
     }
+
+    public static function btnCancel($label = 'Cancel', $url = null, $attributes = [])
+    {
+        if ($url === null) {
+            $url = url()->previous();
+        }
+
+        $link = '<a href="%s"%s>%s</a>';
+
+        return sprintf(
+            $link,
+            $url,
+            self::getAttributeHtml($attributes),
+            $label
+        );
+    }
     
     public static function mergeAttributes($array1, $array2)
     {

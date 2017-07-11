@@ -61,5 +61,7 @@ Route::group([
     Route::group(['prefix' => 'contents'], function() {
         Route::get('/', 'ContentsController@index')->name('admin.contents');
         Route::get('/create/{id?}', 'ContentsController@create')->name('admin.contents.create');
+        Route::post('/store/{id?}', 'ContentsController@store')->name('admin.contents.store');
+        Route::get('/destroy/{id}', 'ContentsController@destroy')->name('admin.contents.destroy');
     });
 });

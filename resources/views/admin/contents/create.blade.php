@@ -3,11 +3,17 @@
 @section('header', 'Add content section')
 
 @section('content_container')
-    {!! BootForm::open(['store' => 'admin.contents']) !!}
+    {!! BootForm::open(['route' => ['admin.contents.store', $model_data->id], 'model' => $model_data]) !!}
 
-    {!! BootForm::text('slug') !!}
+    {!! BootForm::text('key') !!}
 
-    {!! BootForm::submit() !!}
+    {!! BootForm::text('title') !!}
+
+    {!! BootForm::textarea('content', null, null, ['class' => 'tinymce', 'rows' => 16]) !!}
+
+    {!! BootForm::submit('Save') !!}
+
+    {!! AdminUtil::btnCancel() !!}
 
     {!! BootForm::close() !!}
 @endsection

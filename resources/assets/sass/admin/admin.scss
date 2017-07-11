@@ -1,5 +1,8 @@
 @import 'colors_admin';
 
+@import 'bootstrap_custom';
+
+
 html, body {
   height: 100%;
 }
@@ -28,6 +31,14 @@ a {
   .fa {
     margin-right: 6px;
   }
+}
+
+.table th:last-of-type {
+  width: 126px;
+}
+
+.table tr > td:last-of-type {
+  text-align: right;
 }
 
 .table-v-middle td {
@@ -134,7 +145,6 @@ $page-menu-width: 12%;
 }
 
 
-
 footer {
   background-color: $color-black;
   bottom: 0;
@@ -143,5 +153,3 @@ footer {
   right: 0;
   text-align: right;
 }
-
-@import 'bootstrap_custom';

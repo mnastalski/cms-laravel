@@ -183,6 +183,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Watson\BootstrapForm\BootstrapFormServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class
 
     ],
 

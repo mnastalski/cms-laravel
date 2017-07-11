@@ -28,10 +28,6 @@
   }
 }
 
-.table th:last-of-type {
-  width: 126px;
-}
-
 
 /* Buttons */
 
@@ -40,5 +36,31 @@ a.btn {
 
   &:focus {
     color: $color-gray-light;
+  }
+}
+
+/* Inputs */
+
+.input-group-addon {
+  background-color: $color-black;
+  border-color: $color-gray-mid;
+  color: darken($color-gray-light, 15%);
+
+  .fa {
+    color: $color-gray-mid;
+    font-size: 14px;
+  }
+}
+
+.form-control {
+  @extend .input-group-addon;
+
+  font-size: 13px;
+
+  &:focus {
+    background-color: lighten($color-black, 5%);
+    border-color: $field-focus-border-color;
+    box-shadow: 0 0 5px darken($field-focus-border-color, 5%);
+    color: darken($color-gray-light, 10%);
   }
 }

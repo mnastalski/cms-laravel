@@ -49,6 +49,8 @@
                 @endif
 
                 <div class="content-container">
+                    @include('flash::message')
+
                     @hasSection('btn_bar')
                         <div class="btn-bar">
                             @yield('btn_bar')
@@ -68,5 +70,7 @@
 @endsection
 
 @section('js')
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/tinymce/tinymce.min.js') }}"></script>
+
+    <script src="{{ asset('js/admin.js') }}"></script>
 @endsection

@@ -11,7 +11,7 @@
         <thead>
             <tr>
                 <th class="col-md-1">ID</th>
-                <th>Slug</th>
+                <th>Key</th>
                 <th>Title</th>
                 <th>Added</th>
                 <th>Updated</th>
@@ -22,7 +22,15 @@
         <tbody>
             @forelse ($contents as $key => $item)
                 <tr>
-                    <td></td>
+                    <td>{{ $item->id }}</td>
+                    <td>{{ $item->key }}</td>
+                    <td class="col-md-4">{{ $item->title }}</td>
+                    <td class="col-md-2">{{ $item->created_at }}</td>
+                    <td class="col-md-2">{{ $item->updated_at }}</td>
+                    <td>
+                        {!! AdminUtil::btnEdit(route('admin.contents.create', [$item->id])) !!}
+                        {!! AdminUtil::btnDelete(route('admin.contents.destroy', [$item->id])) !!}
+                    </td>
                 </tr>
             @empty
                 <tr>
