@@ -8,7 +8,7 @@
 
             <div class="pull-right text-right">
                 {{ $user->email }}<br>
-                <a href="{{ route('admin_logout') }}" class="logout text-uppercase">logout<i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                <a href="{{ route('admin.logout') }}" class="logout text-uppercase">logout<i class="fa fa-sign-out" aria-hidden="true"></i></a>
             </div>
         </header>
 

@@ -21,6 +21,6 @@ class LoginController extends \App\Http\Controllers\Auth\LoginController
     {
         Auth::logout();
 
-        return redirect()->route('admin_login');
+        return redirect()->route('admin.login');
     }
 }

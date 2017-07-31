@@ -16,9 +16,9 @@
         <div class="row justify-content-center">
             <div class="col-10 col-sm-7 col-md-5 col-lg-4 col-xl-3 text-center login-box">
 
-                <a href="{{ route('admin_login') }}"><img src="{{ asset('img/logo_admin.png') }}" class="img-fluid login-logo"></a>
+                <a href="{{ route('admin.login') }}"><img src="{{ asset('img/logo_admin.png') }}" class="img-fluid login-logo"></a>
 
-                <form method="post" action="{{ route('admin_login_post') }}" class="login-form">
+                <form method="post" action="{{ route('admin.login.post') }}" class="login-form">
                     {{ csrf_field() }}
 
                     @if ($errors->any())
