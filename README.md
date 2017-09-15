@@ -1,4 +1,4 @@
-# Laravel based CMS
+# Laravel 5.5 based CMS
 
 &copy; Mateusz Nastalski
 
