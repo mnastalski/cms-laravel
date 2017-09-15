@@ -16,16 +16,16 @@ class ContentsController extends AdminController
 
     public function create($id = 0)
     {
-        $model_data = Content::find($id);
+        if ($id === 0) {
+            $model_data = [];
+        } else {
+            $model_data = Content::where('id', $id)->orWhere('key', $id)->first();
 
-        if (!$model_data) {
-            $model_data = Content::where('key', $id)->first();
-        }
+            if (!$model_data) {
+                flash('Content section with key "' . $id . '" not found')->warning();
 
-        if (!$model_data) {
-            flash('Content section with key "' . $id . '" not found')->warning();
-
-            return $this->index();
+                return $this->index();
+            }
         }
 
         return view('admin.contents.create', compact('model_data'));
