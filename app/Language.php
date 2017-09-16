@@ -8,8 +8,7 @@ use Gettext\Languages\Language as CLDR;
 class Language extends Model
 {
     protected $fillable = [
-        'lang',
-        'lang_full',
+        'key',
         'active'
     ];
 
@@ -17,10 +16,8 @@ class Language extends Model
         'active' => 'boolean'
     ];
 
-    public function getLangName()
+    public function getNameAttribute()
     {
-        return CLDR::getById($this->lang)->name;
+        return CLDR::getById($this->key)->name;
     }
-
-//    protected $dates = false;
 }

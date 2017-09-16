@@ -15,7 +15,7 @@ class CreateLanguagesTable extends Migration
     {
         Schema::create('languages', function (Blueprint $table) {
             $table->increments('id')->unsigned();
-            $table->string('lang', 3)->unique();
+            $table->string('key', 3)->unique();
             $table->boolean('active')->unsigned()->default('1');
         });
     }

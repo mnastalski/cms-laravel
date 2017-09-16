@@ -22,8 +22,11 @@
             @forelse ($languages as $key => $item)
                 <tr>
                     <td>{{ $item->id }}</td>
-                    <td>{{ $item->lang }}</td>
-                    <td><span class="flag-icon flag-icon-{{ $item->lang == 'en' ? 'gb' : $item->lang }}"></span> {{ $item->getLangName() }}</td>
+                    <td>{{ $item->key }}</td>
+                    <td>
+                        <span class="flag-icon flag-icon-{{ $item->key == 'en' ? 'gb' : $item->key }}"></span>
+                        {{ $item->name }}
+                    </td>
                     <td>{{ $item->active ? 'Active' : 'Inactive' }}</td>
                     <td class="text-right">
                         @if ($item->active)
@@ -32,7 +35,7 @@
                             {!! AdminUtil::btn(route('admin.languages'), 'fa-eye', 'Activate') !!}
                         @endif
 
-                        @if ($item->lang !== \Lang::getFallback())
+                        @if ($item->key !== \Lang::getFallback())
                             {!! AdminUtil::btnDelete(route('admin.languages'), 'Delete') !!}
                         @endif
                     </td>

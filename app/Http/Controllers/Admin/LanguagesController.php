@@ -8,7 +8,7 @@ class LanguagesController extends AdminController
 {
     public function index()
     {
-        $languages = Language::orderBy('lang', 'asc')->get();
+        $languages = Language::orderBy('key', 'asc')->get();
 
         return view('admin.languages.index', compact('languages'));
     }
