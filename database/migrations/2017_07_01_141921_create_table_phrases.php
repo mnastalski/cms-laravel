@@ -15,8 +15,8 @@ class CreateTablePhrases extends Migration
     {
         Schema::create('phrases', function (Blueprint $table) {
             $table->increments('id')->unsigned();
-            $table->string('key', 255)->unique();
-            $table->string('value', 255)->unique();
+            $table->string('key')->unique();
+            $table->string('value')->unique();
         });
     }
 
