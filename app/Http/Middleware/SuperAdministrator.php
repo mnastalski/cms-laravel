@@ -16,10 +16,16 @@ class SuperAdministrator
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check() && Auth::user()->isSuperAdmin()) {
-            return $next($request);
+        if (!Auth::check()) {
+            return redirect()->route('admin.login');
+        }
+        
+        if (!Auth::user()->isSuperAdmin()) {
+            flash()->warning('Insufficent administrator rights');
+
+            return redirect()->route('admin.dashboard');
         }
 
-        return redirect()->route('home');
+        return $next($request);
     }
 }

@@ -39,7 +39,7 @@ Route::group([
 
 
 Route::group([
-    'middleware' => ['auth', 'administrator'],
+    'middleware' => ['administrator'],
     'namespace' => 'Admin',
     'prefix' => 'admin'
 ], function () {
@@ -55,7 +55,7 @@ Route::group([
     });
 
     Route::group(['prefix' => 'phrases'], function() {
-        Route::get('/', 'PhrasesController@index')->name('admin.phrases');
+        Route::get('/', 'PhrasesController@index')->name('admin.phrases')->middleware('superadmin');
     });
 
     Route::group(['prefix' => 'contents'], function() {

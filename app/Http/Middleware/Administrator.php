@@ -16,10 +16,14 @@ class Administrator
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check() && Auth::user()->isAdmin()) {
-            return $next($request);
+        if (!Auth::check()) {
+            return redirect()->route('admin.login');
         }
 
-        return redirect()->route('home');
+        if (!Auth::user()->isAdmin()) {
+            return redirect()->route('home');
+        }
+
+        return $next($request);
     }
 }
