@@ -1,3 +1,18 @@
+.brown-light {
+  color: $brown-light;
+}
+
+.btn-brown {
+  background-color: $brown;
+  color: $white;
+
+  @include hover-focus {
+    background-color: darken($brown, 8%);
+    box-shadow: none;
+    color: darken($white, 8%);
+  }
+}
+
 .vcenter {
   margin-top: auto;
   margin-bottom: auto;

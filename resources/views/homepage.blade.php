@@ -1,18 +1,15 @@
 @extends('base')
 
 @section('header_banner')
-
     <div class="row">
         <div class="col-4 offset-1 brown-light">
             <h4>We bake and cook and bake and cook</h4>
             <p class="small">We create and make and bake and cookies are great I love ice cream, at condimentum ante fringilla vel. Maecenas dapibus neque non nibh porttitor, in malesuada libero tempus. In eu pharetra metus. Duis varius arcu dapibus, interdum ipsum ac, condimentum ante.</p>
         </div>
     </div>
-
 @endsection
 
 @section('content')
-
     <div class="container">
 
         <h1 class="item-group-header">categories</h1>
@@ -21,27 +18,27 @@
 
             <div class="col-3">
                 <div class="item-group">
-                    <img class="img-fluid" src="{{ asset('img/categories/1.png') }}" alt="Cookies">
+                    <img class="img-fluid" src="{{ asset('assets/img/categories/1.png') }}" alt="Cookies">
                     <div class="item-group-label">
-                        <a href="#" class="btn btn-primary btn-brown">Check</a>
+                        <a href="#" class="btn btn-brown">Check</a>
                     </div>
                 </div>
             </div>
 
             <div class="col-3">
                 <div class="item-group">
-                    <img class="img-fluid" src="{{ asset('img/categories/2.png') }}" alt="Cookies">
+                    <img class="img-fluid" src="{{ asset('assets/img/categories/2.png') }}" alt="Cookies">
                     <div class="item-group-label">
-                        <a href="#" class="btn btn-primary btn-brown">Check</a>
+                        <a href="#" class="btn btn-brown">Check</a>
                     </div>
                 </div>
             </div>
 
             <div class="col-3">
                 <div class="item-group">
-                    <img class="img-fluid" src="{{ asset('img/categories/3.png') }}" alt="Cookies">
+                    <img class="img-fluid" src="{{ asset('assets/img/categories/3.png') }}" alt="Cookies">
                     <div class="item-group-label">
-                        <a href="#" class="btn btn-primary btn-brown">Check</a>
+                        <a href="#" class="btn btn-brown">Check</a>
                     </div>
                 </div>
             </div>
@@ -55,5 +52,4 @@
         <h1 class="item-group-header">most popular</h1>
 
     </div>
-
 @endsection

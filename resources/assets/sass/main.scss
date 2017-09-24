@@ -1,8 +1,10 @@
-@import 'colors';
+@import 'variables';
+
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~flag-icon-css/sass/_flag-icon.scss';
+@import '~font-awesome/scss/font-awesome.scss';
 
 @import 'header';
 @import 'header_banner';
 
-@import 'base';
-
-@import 'buttons';
+@import 'core';

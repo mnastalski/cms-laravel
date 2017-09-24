@@ -5,10 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1">
     <title>@yield('title', 'Cookie World')</title>
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/flag-icon.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
     @yield('css')
 </head>
 <body>
@@ -17,7 +14,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-3 col-md-4">
-                    <a href="{{ route('home') }}"><img class="img-fluid logo" src="{{ asset('img/logo.png') }}" alt="Cookie World"></a>
+                    <a href="{{ route('home') }}"><img class="img-fluid logo" src="{{ asset('assets/img/logo.png') }}" alt="Cookie World"></a>
                 </div>
 
                 <div class="col-8 col-md-6 px-0 vcenter">
@@ -50,7 +47,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     @yield('js')
 
 </body>

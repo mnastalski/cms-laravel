@@ -6,25 +6,25 @@
   tbody,
   th,
   td {
-    border-color: $color-black-mid !important;
+    border-color: $black-lighter !important;
   }
 }
 
 .table thead {
-  background-color: $color-black;
+  background-color: $black;
 }
 
 .table-bordered {
-  border-color: $color-black-mid !important;
+  border-color: $black-lighter !important;
 }
 
 .table-striped {
   tbody tr:nth-of-type(odd) {
-    background-color: lighten($bg-color-dark, 1%);
+    background-color: lighten($black-light, 1%);
   }
 
   tbody tr:nth-of-type(even) {
-    background-color: lighten($color-black, 10%);
+    background-color: lighten($black, 10%);
   }
 }
 
@@ -32,22 +32,22 @@
 /* Buttons */
 
 a.btn {
-  color: $color-gray-light;
+  color: $gray-light;
 
   &:focus {
-    color: $color-gray-light;
+    color: $gray-light;
   }
 }
 
 /* Inputs */
 
 .input-group-addon {
-  background-color: $color-black;
-  border-color: $color-gray-mid;
-  color: darken($color-gray-light, 15%);
+  background-color: $black;
+  border-color: $gray-mid;
+  color: darken($gray-light, 15%);
 
   .fa {
-    color: $color-gray-mid;
+    color: $gray-mid;
     font-size: 14px;
   }
 }
@@ -58,9 +58,9 @@ a.btn {
   font-size: 13px;
 
   &:focus {
-    background-color: lighten($color-black, 5%);
+    background-color: lighten($black, 5%);
     border-color: $field-focus-border-color;
     box-shadow: 0 0 5px darken($field-focus-border-color, 5%);
-    color: darken($color-gray-light, 10%);
+    color: darken($gray-light, 10%);
   }
 }

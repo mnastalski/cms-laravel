@@ -4,7 +4,7 @@
     <div id="admin-container">
 
         <header>
-            <a href="{{ route('admin.dashboard') }}"><img src="{{ asset('img/logo_admin_2.png') }}" alt=""></a>
+            <a href="{{ route('admin.dashboard') }}"><img src="{{ asset('assets/img/logo_admin_2.png') }}" alt=""></a>
 
             <div class="pull-right text-right">
                 {{ $user->email }}<br>

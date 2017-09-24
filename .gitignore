@@ -8,5 +8,5 @@ npm-debug.log
 .env
 notes.txt
 
-/public/css/*
-/public/js/*
+/public/assets/css/*
+/public/assets/js/*

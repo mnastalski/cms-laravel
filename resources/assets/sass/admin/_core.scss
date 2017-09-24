@@ -1,0 +1,158 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: $black-light;
+  color: $gray-light;
+}
+
+a {
+  color: $blue-light;
+
+  &:hover {
+    color: darken($blue-light, 8%);
+    text-decoration: none;
+  }
+}
+
+.btn {
+  cursor: pointer;
+
+  @include hover-focus {
+    box-shadow: none;
+  }
+}
+
+.btn-panel {
+  color: $gray-light;
+  font-size: 12px;
+  font-weight: 700;
+  padding: .6rem 1rem .5rem;
+  text-transform: uppercase;
+
+  .fa {
+    margin-right: 6px;
+  }
+}
+
+.table th:last-of-type {
+  width: 126px;
+}
+
+.table tr > td:last-of-type {
+  text-align: right;
+}
+
+.table-v-middle td {
+  vertical-align: middle;
+}
+
+#admin-container {
+  min-height: 100%;
+  position: relative;
+}
+
+header {
+  background-color: $black;
+  padding: 10px 15px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+
+  .logout {
+    font-weight: bold;
+    font-size: 12px;
+
+    .fa {
+      margin-left: 5px;
+    }
+  }
+}
+
+.page-container {
+  width: 100%;
+}
+
+$page-menu-width: 12%;
+
+.page-menu {
+  background-color: $black;
+  float: left;
+  height: 100%;
+  min-width: 150px;
+  position: fixed;
+  top: 62px;
+  width: $page-menu-width;
+  z-index: 1;
+}
+
+.page-menu-list {
+  a {
+    display: block;
+    padding: 7px 12px;
+    width: 100%;
+
+    &.active, &:hover, &:focus {
+      border-left: $blue-light solid 5px;
+      color: lighten($blue-light, 10%);
+      background-color: $black-lighter;
+      text-decoration: none;
+    }
+
+    .fa {
+      margin: 0 8px 0 0;
+    }
+  }
+}
+
+//.page-menu-caret {
+//  background-color: $field-bg-color;
+//  font-size: 18px;
+//  position: fixed;
+//  left: 12%;
+//}
+
+.main-container {
+  float: right;
+  margin-top: 62px;
+  width: 100% - $page-menu-width;
+}
+
+.content-header {
+  border-bottom: 1px solid $black;
+  color: $gray;
+  margin: 15px 20px 10px;
+  padding: 0 0 5px;
+
+  h1 {
+    font-family: Tahoma, Helvetica, Arial;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    //text-transform: uppercase;
+  }
+}
+
+.content-container {
+  margin: 10px 20px 15px;
+}
+
+.btn-bar {
+  margin: 10px 0 15px;
+  text-align: right;
+
+  .btn-panel {
+    margin: 0 3px;
+  }
+}
+
+
+footer {
+  background-color: $black;
+  bottom: 0;
+  padding: 5px 10px;
+  position: fixed;
+  right: 0;
+  text-align: right;
+}

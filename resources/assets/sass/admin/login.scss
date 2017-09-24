@@ -1,4 +1,4 @@
-@import 'colors_admin';
+@import 'variables';
 
 $bg-ratio: 45%;
 
@@ -19,18 +19,14 @@ html, body {
   //overflow: hidden;
 }
 
-button[type="submit"] {
-  cursor: pointer;
-}
-
 .body-half-1 {
-  background-color: $color-gray-light;
+  background-color: $gray-light;
   height: $bg-ratio;
   min-height: $bg-ratio;
 }
 
 .body-half-2 {
-  background-color: $bg-color-dark;
+  background-color: $black-light;
   height: 100% - $bg-ratio;
   min-height: 100% - $bg-ratio;
 }
@@ -43,59 +39,11 @@ button[type="submit"] {
 }
 
 .login-box {
-  background-color: darken($bg-color-dark, 3.9%);
+  background-color: darken($black-light, 4%);
   box-shadow: 0 0 2px 0 rgba(255, 255, 255, 0.25);
 }
 
 .login-logo {
   height: 144px;
-  margin: 25px 0 0;
   width: 218px;
-}
-
-.login-form {
-  padding: 20px 40px;
-}
-
-.input-group {
-  margin: 10px 0;
-}
-
-/*
-.input-group-addon {
-  background-color: $color-black;
-  border-color: $color-gray-mid;
-  color: $color-gray-light;
-
-  .fa {
-    color: $color-gray-mid;
-    font-size: 14px;
-  }
-}
-
-input[type="email"], input[type="password"] {
-  @extend .input-group-addon;
-
-  font-size: 12px;
-
-  &:focus {
-    background-color: lighten($color-black, 5%);
-    border-color: $field-focus-border-color;
-    box-shadow: 0 0 5px darken($field-focus-border-color, 5%);
-    color: $color-gray-light;
-  }
-}
-*/
-
-button[type="submit"] {
-  margin: 5px 0 0;
-}
-
-.alert {
-  margin: -5px 0 20px;
-  padding: 6px;
-}
-
-.copyright {
-  padding: 12px 0;
 }
