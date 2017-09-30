@@ -1,72 +1,72 @@
 @extends('admin.layout')
 
 @section('content')
-    <div id="admin-container">
+    <header class="container-fluid">
+        <div class="row">
+            <div class="col-6">
+                <a href="{{ route('admin.dashboard') }}">
+                    <img src="{{ asset('assets/img/logo_admin_2.png') }}" alt="">
+                </a>
+            </div>
 
-        <header>
-            <a href="{{ route('admin.dashboard') }}"><img src="{{ asset('assets/img/logo_admin_2.png') }}" alt=""></a>
-
-            <div class="pull-right text-right">
+            <div class="col-6 text-right">
                 {{ $user->email }}<br>
-                <a href="{{ route('admin.logout') }}" class="logout text-uppercase">logout<i class="fa fa-sign-out" aria-hidden="true"></i></a>
-            </div>
-        </header>
-
-        <div class="page-container">
-            <div class="page-menu">
-                <div class="page-menu-list">
-                    {{--<div class="page-menu-caret"><i class="fa fa-angle-double-left" aria-hidden="true"></i></div>--}}
-
-                    {!! AdminMenu::add()->route('admin.dashboard')->label('Dashboard')->icon('fa-home')->get() !!}
-                    {!! AdminMenu::add()->route('admin.languages')->label('Languages')->icon('fa-language')->get() !!}
-                    {!! AdminMenu::add()->route('admin.phrases')->label('Phrases')->icon('fa-font')->get() !!}
-                    {!! AdminMenu::add()->route('admin.contents')->label('Content sections')->icon('fa-book')->get() !!}
-
-                </div>
-            </div>
-
-            <div class="main-container">
-                @hasSection('header')
-                    <div class="content-header">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h1>@yield('header')</h1>
-
-                                @hasSection('description')
-                                    <small>@yield('description')</small>
-                                @else
-                                    <div style="height: 6px"></div>
-                                @endif
-                            </div>
-
-                            {{--
-                            <div class="col-md-6 d-flex align-items-center justify-content-end small">
-                                Breadcrumb > Crumb > Little crumb
-                            </div>
-                            --}}
-                        </div>
-                    </div>
-                @endif
-
-                <div class="content-container">
-                    @include('flash::message')
-
-                    @hasSection('btn_bar')
-                        <div class="btn-bar">
-                            @yield('btn_bar')
-                        </div>
-                    @endif
-
-                    @yield('content_container')
-                </div>
+                <a href="{{ route('admin.logout') }}" class="smaller font-weight-bold text-uppercase">
+                    logout<i class="fa fa-sign-out ml-1" aria-hidden="true"></i>
+                </a>
             </div>
         </div>
+    </header>
 
-        <footer class="small">
-            <a href="https://github.com/mnastalski/" target="_blank">Mateusz Nastalski</a> &copy; 2017
-        </footer>
+    <div class="page-menu">
+            {{--<div class="page-menu-caret"><i class="fa fa-angle-double-left" aria-hidden="true"></i></div>--}}
+
+            {!! AdminMenu::add()->route('admin.dashboard')->label('Dashboard')->icon('fa-home')->get() !!}
+            {!! AdminMenu::add()->route('admin.languages')->label('Languages')->icon('fa-language')->get() !!}
+            {!! AdminMenu::add()->route('admin.phrases')->label('Phrases')->icon('fa-font')->get() !!}
+            {!! AdminMenu::add()->route('admin.contents')->label('Content sections')->icon('fa-book')->get() !!}
 
     </div>
+
+    <div class="content-container">
+
+        @hasSection('header')
+            <div class="row pt-3 pb-1 mx-3 content-header">
+                <div class="px-1">
+                    <h2>@yield('header')</h2>
+
+                    @hasSection('description')
+                        <span class="smaller">@yield('description')</span>
+                    @else
+                        <div style="height: 6px"></div>
+                    @endif
+                </div>
+
+                    {{--
+                    <div class="col-md-6 small">
+                        Breadcrumb > Crumb > Little crumb
+                    </div>
+                    --}}
+            </div>
+        @endif
+
+        <div class="m-3 px-1">
+            @include('flash::message')
+
+            @hasSection('btn_bar')
+                <div class="mb-3 text-right btn-bar">
+                    @yield('btn_bar')
+                </div>
+            @endif
+
+            @yield('content_container')
+        </div>
+
+    </div>
+
+    <footer>
+        <a href="https://github.com/mnastalski/" target="_blank">Mateusz Nastalski</a> &copy; 2017
+    </footer>
 @endsection
 
 @section('js_vendor')

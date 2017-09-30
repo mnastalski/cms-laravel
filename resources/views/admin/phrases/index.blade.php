@@ -7,12 +7,12 @@
 @endsection
 
 @section('content_container')
-    <table class="table table-striped table-bordered table-v-middle">
+    <table class="table table-striped table-bordered table-actions">
         <thead>
             <tr>
                 <th class="col-md-1">ID</th>
                 <th>Phrase</th>
-                <th></th>
+                <th>Actions</th>
             </tr>
         </thead>
 

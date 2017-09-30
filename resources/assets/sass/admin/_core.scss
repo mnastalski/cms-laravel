@@ -1,7 +1,3 @@
-html, body {
-  height: 100%;
-}
-
 body {
   background-color: $black-light;
   color: $gray-light;
@@ -10,10 +6,16 @@ body {
 a {
   color: $blue-light;
 
-  &:hover {
+  @include hover-focus {
     color: darken($blue-light, 8%);
     text-decoration: none;
   }
+}
+
+$font-size-smaller: .75rem;
+
+.smaller {
+  font-size: $font-size-smaller;
 }
 
 .btn {
@@ -26,7 +28,7 @@ a {
 
 .btn-panel {
   color: $gray-light;
-  font-size: 12px;
+  font-size: $font-size-smaller;
   font-weight: 700;
   padding: .6rem 1rem .5rem;
   text-transform: uppercase;
@@ -36,64 +38,54 @@ a {
   }
 }
 
-.table th:last-of-type {
-  width: 126px;
-}
+table {
+  td {
+    vertical-align: middle !important;
+  }
 
-.table tr > td:last-of-type {
-  text-align: right;
-}
+  &.table-actions {
+    th:last-of-type {
+      text-align: right;
+      width: 160px;
+    }
 
-.table-v-middle td {
-  vertical-align: middle;
-}
-
-#admin-container {
-  min-height: 100%;
-  position: relative;
-}
-
-header {
-  background-color: $black;
-  padding: 10px 15px;
-  position: fixed;
-  width: 100%;
-  z-index: 1;
-
-  .logout {
-    font-weight: bold;
-    font-size: 12px;
-
-    .fa {
-      margin-left: 5px;
+    tr > td:last-of-type {
+      text-align: right;
     }
   }
 }
 
-.page-container {
-  width: 100%;
+
+// header
+header {
+  background-color: $black;
+  height: 70px;
+  left: 0;
+  padding: .6rem .9rem 0;
+  position: fixed;
+  top: 0;
+  z-index: 2;
 }
 
-$page-menu-width: 12%;
 
+// main menu
 .page-menu {
   background-color: $black;
-  float: left;
   height: 100%;
-  min-width: 150px;
+  left: 0;
   position: fixed;
-  top: 62px;
-  width: $page-menu-width;
-  z-index: 1;
-}
+  top: 70px;
+  width: 220px;
+  z-index: 2;
 
-.page-menu-list {
   a {
     display: block;
-    padding: 7px 12px;
+    padding: .5rem .7rem;
     width: 100%;
 
-    &.active, &:hover, &:focus {
+    &.active,
+    &:hover,
+    &:focus {
       border-left: $blue-light solid 5px;
       color: lighten($blue-light, 10%);
       background-color: $black-lighter;
@@ -101,9 +93,15 @@ $page-menu-width: 12%;
     }
 
     .fa {
-      margin: 0 8px 0 0;
+      margin: 0 .5rem 0 0;
     }
   }
+}
+
+
+// contents
+.content-container {
+  margin: 70px 0 0 220px;
 }
 
 //.page-menu-caret {
@@ -113,46 +111,32 @@ $page-menu-width: 12%;
 //  left: 12%;
 //}
 
-.main-container {
-  float: right;
-  margin-top: 62px;
-  width: 100% - $page-menu-width;
-}
-
 .content-header {
   border-bottom: 1px solid $black;
-  color: $gray;
-  margin: 15px 20px 10px;
-  padding: 0 0 5px;
 
-  h1 {
-    font-family: Tahoma, Helvetica, Arial;
-    font-size: 18px;
-    font-weight: bold;
+  h2 {
+    color: $blue-light;
+    font-size: $small-font-size;
+    font-weight: $font-weight-bold;
     margin: 0;
-    //text-transform: uppercase;
+    text-transform: uppercase;
   }
-}
-
-.content-container {
-  margin: 10px 20px 15px;
 }
 
 .btn-bar {
-  margin: 10px 0 15px;
-  text-align: right;
-
   .btn-panel {
-    margin: 0 3px;
+    margin: 0 .2rem;
   }
 }
 
 
+// footer
 footer {
   background-color: $black;
   bottom: 0;
-  padding: 5px 10px;
+  font-size: $small-font-size;
+  padding: .3rem .6rem;
   position: fixed;
   right: 0;
-  text-align: right;
+  z-index: 1;
 }

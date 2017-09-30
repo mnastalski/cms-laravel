@@ -8,10 +8,10 @@
   td {
     border-color: $black-lighter !important;
   }
-}
 
-.table thead {
-  background-color: $black;
+  thead {
+    background-color: $black;
+  }
 }
 
 .table-bordered {
@@ -29,16 +29,6 @@
 }
 
 
-/* Buttons */
-
-a.btn {
-  color: $gray-light;
-
-  &:focus {
-    color: $gray-light;
-  }
-}
-
 /* Inputs */
 
 .input-group-addon {
@@ -48,14 +38,15 @@ a.btn {
 
   .fa {
     color: $gray-mid;
-    font-size: 14px;
+    font-size: 90%;
   }
 }
 
 .form-control {
-  @extend .input-group-addon;
-
-  font-size: 13px;
+  background-color: $black;
+  border-color: $gray-mid;
+  color: darken($gray-light, 15%);
+  font-size: 90%;
 
   &:focus {
     background-color: lighten($black, 5%);

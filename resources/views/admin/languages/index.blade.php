@@ -7,28 +7,34 @@
 @endsection
 
 @section('content_container')
-    <table class="table table-striped table-bordered table-v-middle">
+    <table class="table table-striped table-bordered table-actions">
         <thead>
             <tr>
                 <th class="col-md-1">ID</th>
                 <th>Code</th>
                 <th>Language</th>
                 <th>Status</th>
-                <th></th>
+                <th>Actions</th>
             </tr>
         </thead>
 
         <tbody>
             @forelse ($languages as $key => $item)
                 <tr>
-                    <td>{{ $item->id }}</td>
-                    <td>{{ $item->key }}</td>
+                    <td>
+                        {{ $item->id }}
+                    </td>
+                    <td>
+                        {{ $item->key }}
+                    </td>
                     <td>
                         <span class="flag-icon flag-icon-{{ $item->key == 'en' ? 'gb' : $item->key }}"></span>
                         {{ $item->name }}
                     </td>
-                    <td>{{ $item->active ? 'Active' : 'Inactive' }}</td>
-                    <td class="text-right">
+                    <td>
+                        {{ $item->active ? 'Active' : 'Inactive' }}
+                    </td>
+                    <td>
                         @if ($item->active)
                             {!! AdminUtil::btn(route('admin.languages'), 'fa-eye-slash', 'Deactivate') !!}
                         @else
