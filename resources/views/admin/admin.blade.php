@@ -1,4 +1,4 @@
-@extends('admin.base')
+@extends('admin.layout')
 
 @section('content')
     <div id="admin-container">
@@ -69,8 +69,6 @@
     </div>
 @endsection
 
-@section('js')
-    <script src="{{ asset('js/tinymce/tinymce.min.js') }}"></script>
-
-    <script src="{{ asset('js/admin.js') }}"></script>
+@section('js_vendor')
+    <script src="{{ asset('assets/vendor/js/tinymce/tinymce.min.js') }}"></script>
 @endsection

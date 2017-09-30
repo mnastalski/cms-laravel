@@ -1,83 +1,88 @@
 const gulp = require('gulp');
-var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
-var merge = require('merge-stream');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var stripDebug = require('gulp-strip-debug');
 var tildeImporter = require('node-sass-tilde-importer');
+var include = require('gulp-include');
 
 var Locations = {
     input: {
         sass: [
             'resources/assets/sass/**/*.scss'
         ],
-        css_libs: [
-            'resources/assets/sass/lib/*.css'
-        ],
         js: [
             'resources/assets/js/*.js'
         ],
-        js_libs: [
-            'resources/assets/js/lib/**/*'
+        vendor: [
+            'resources/assets/vendor/**/*'
         ]
     },
 
     output: {
         css: 'public/assets/css',
-        js: 'public/assets/js'
+        js: 'public/assets/js',
+        vendor: 'public/assets/vendor'
     }
 };
 
 gulp.task('default', ['build:dev', 'watch']);
 
 gulp.task('watch', function () {
-    gulp.watch('resources/assets/sass/**/*', ['sass']);
+    gulp.watch('resources/assets/sass/**/*', ['sass:dev']);
     gulp.watch('resources/assets/js/**/*', ['js:dev']);
+    gulp.watch('resources/assets/vendor/**/*', ['vendor']);
 });
 
-gulp.task('build:prod', ['sass', 'js:prod']);
-gulp.task('build:dev', ['sass', 'js:dev']);
+gulp.task('build:prod', ['sass:prod', 'js:prod', 'vendor']);
+gulp.task('build:dev', ['sass:dev', 'js:dev', 'vendor']);
 
-gulp.task('sass', function () {
-    var css_libs = gulp.src(Locations.input.css_libs)
-        .pipe(rename({dirname: ''}))
-        .pipe(gulp.dest(Locations.output.css));
-
-    var sass_src = gulp.src(Locations.input.sass)
+gulp.task('sass:dev', function () {
+    return gulp.src(Locations.input.sass)
         .pipe(sass({
             importer: tildeImporter,
             outputStyle: 'compressed'
         })).on('error', sass.logError)
         .pipe(rename({dirname: ''}))
         .pipe(gulp.dest(Locations.output.css));
+});
 
-    return merge(css_libs, sass_src);
+gulp.task('sass:prod', function () {
+    return gulp.src(Locations.input.sass)
+        .pipe(sass({
+            importer: tildeImporter
+        })).on('error', sass.logError)
+        .pipe(rename({dirname: ''}))
+        .pipe(gulp.dest(Locations.output.css));
+});
+
+gulp.task('js:dev', function () {
+    return gulp.src(Locations.input.js)
+        .pipe(include({
+            includePaths: [
+                'node_modules'
+            ]
+        }))
+        .pipe(gulp.dest(Locations.output.js));
 });
 
 gulp.task('js:prod', function () {
-    var js_libs = gulp.src(Locations.input.js_libs)
-        .pipe(gulp.dest(Locations.output.js));
-
-    var js_src = gulp.src(Locations.input.js)
+    return gulp.src(Locations.input.js)
+        .pipe(include({
+            includePaths: [
+                'node_modules'
+            ]
+        }))
         .pipe(stripDebug())
         .pipe(uglify({
             output: {
                 comments: '/^!/'
             }
         }))
-        .pipe(rename({dirname: ''}))
         .pipe(gulp.dest(Locations.output.js));
-
-    return merge(js_libs, js_src);
 });
 
-gulp.task('js:dev', function () {
-    var js_libs = gulp.src(Locations.input.js_libs)
-        .pipe(gulp.dest(Locations.output.js));
-
-    var js_src = gulp.src(Locations.input.js)
-        .pipe(gulp.dest(Locations.output.js));
-
-    return merge(js_libs, js_src);
+gulp.task('vendor', function () {
+    return gulp.src(Locations.input.vendor)
+        .pipe(gulp.dest(Locations.output.vendor));
 });
