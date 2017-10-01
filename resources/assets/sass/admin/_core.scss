@@ -12,7 +12,33 @@ a {
   }
 }
 
-$font-size-smaller: .75rem;
+table {
+  td {
+    vertical-align: middle !important;
+  }
+
+  &.table-actions {
+    th:last-of-type {
+      text-align: right;
+      width: 160px;
+    }
+
+    tr > td:last-of-type {
+      text-align: right;
+    }
+  }
+}
+
+.form-control {
+  font-size: .8rem;
+}
+
+.input-group-addon {
+  .fa {
+    color: $gray-mid;
+    font-size: .9rem;
+  }
+}
 
 .smaller {
   font-size: $font-size-smaller;
@@ -35,23 +61,6 @@ $font-size-smaller: .75rem;
 
   .fa {
     margin-right: 6px;
-  }
-}
-
-table {
-  td {
-    vertical-align: middle !important;
-  }
-
-  &.table-actions {
-    th:last-of-type {
-      text-align: right;
-      width: 160px;
-    }
-
-    tr > td:last-of-type {
-      text-align: right;
-    }
   }
 }
 
