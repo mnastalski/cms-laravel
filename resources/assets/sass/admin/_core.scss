@@ -13,6 +13,12 @@ a {
 }
 
 table {
+  th {
+    font-size: $font-size-smaller;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+  }
+
   td {
     vertical-align: middle !important;
   }
@@ -31,6 +37,31 @@ table {
 
 .gray-light {
   color: $gray-light;
+}
+
+.form-group {
+  label {
+    font-size: .7rem;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+  }
+
+  .help-block {
+    display: block;
+    font-size: $small-font-size;
+    padding: .1rem 0;
+  }
+
+  &.has-error {
+    input,
+    textarea {
+      border: 1px solid $red;
+    }
+
+    .help-block {
+      color: $red;
+    }
+  }
 }
 
 .form-control {

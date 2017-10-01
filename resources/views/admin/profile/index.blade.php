@@ -5,7 +5,7 @@
 @section('content_container')
     {!! BootForm::open() !!}
 
-    {!! BootForm::staticField('static', 'Email', $user->email) !!}
+    {!! BootForm::text('static', 'Email', $user->email, ['disabled' => true]) !!}
 
     {!! BootForm::password('password', 'Current password') !!}
 
