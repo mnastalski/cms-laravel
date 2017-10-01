@@ -1,36 +1,4 @@
-/* Tables */
-
-.table {
-
-  thead,
-  tbody,
-  th,
-  td {
-    border-color: $black-lighter !important;
-  }
-
-  thead {
-    background-color: $black;
-  }
-}
-
-.table-bordered {
-  border-color: $black-lighter !important;
-}
-
-.table-striped {
-  tbody tr:nth-of-type(odd) {
-    background-color: lighten($black-light, 1%);
-  }
-
-  tbody tr:nth-of-type(even) {
-    background-color: lighten($black, 10%);
-  }
-}
-
-
-/* Inputs */
-
+// inputs
 .input-group-addon {
   background-color: $black;
   border-color: $gray-mid;
