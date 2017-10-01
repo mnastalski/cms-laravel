@@ -48,7 +48,7 @@ table {
 
   .help-block {
     display: block;
-    font-size: $small-font-size;
+    font-size: .8rem;
     padding: .1rem 0;
   }
 
@@ -168,7 +168,7 @@ table {
 
   h2 {
     color: $blue-light;
-    font-size: $small-font-size;
+    font-size: .8rem;
     font-weight: $font-weight-bold;
     margin: 0;
     text-transform: uppercase;
@@ -186,7 +186,7 @@ table {
 footer {
   background-color: $black;
   bottom: 0;
-  font-size: $small-font-size;
+  font-size: $font-size-smaller;
   padding: .3rem .6rem;
   position: fixed;
   right: 0;
