@@ -41,6 +41,9 @@ html, body {
 .login-box {
   background-color: darken($black-light, 4%);
   box-shadow: 0 0 2px 0 rgba(255, 255, 255, 0.25);
+  margin: 0 auto;
+  max-width: 460px;
+  text-align: center;
 }
 
 .login-logo {
