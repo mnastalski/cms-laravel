@@ -10,7 +10,12 @@
             </div>
 
             <div class="col-6 text-right">
-                {{ $user->email }}<br>
+                <a class="gray-light" href="{{ route('admin.profile') }}">
+                    {{ $user->email }}
+                </a>
+
+                <br>
+
                 <a href="{{ route('admin.logout') }}" class="smaller font-weight-bold text-uppercase">
                     logout<i class="fa fa-sign-out ml-1" aria-hidden="true"></i>
                 </a>
