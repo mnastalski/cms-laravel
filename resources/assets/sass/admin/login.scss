@@ -15,6 +15,10 @@ $bg-ratio: 45%;
   }
 }
 
+html, body {
+  height: 100%;
+}
+
 .body-half-1 {
   background-color: $gray-light;
   height: $bg-ratio;
