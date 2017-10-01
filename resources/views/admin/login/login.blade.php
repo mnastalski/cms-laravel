@@ -18,7 +18,7 @@
                 <img src="{{ asset('assets/img/logo_admin.png') }}" class="img-fluid mt-4 login-logo">
             </a>
 
-            <form method="post" action="{{ route('admin.login.post') }}" class="px-4 py-2">
+            <form method="post" action="{{ route('admin.login.post') }}" class="px-5 py-2">
                 {{ csrf_field() }}
 
                 @if ($errors->any())
