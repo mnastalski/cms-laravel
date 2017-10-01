@@ -12,7 +12,8 @@ Route::get('/', function () {
 });
 
 Route::get('dashboard', 'DashboardController@index')->name('admin.dashboard');
-Route::get('about', 'DashboardController@about')->name('admin.about');
+Route::get('profile', 'ProfileController@index')->name('admin.profile');
+Route::post('profile', 'ProfileController@store')->name('admin.profile.store');
 
 Route::group(['prefix' => 'languages'], function () {
     Route::get('/', 'LanguagesController@index')->name('admin.languages');

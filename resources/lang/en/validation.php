@@ -100,9 +100,9 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
-        ],
+        'password_new' => [
+            'regex' => 'Password must contain at least 1 letter and 1 number.'
+        ]
     ],
 
     /*
@@ -116,6 +116,8 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'password_new' => 'new password',
+    ],
 
 ];

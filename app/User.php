@@ -9,6 +9,14 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    const RULES_PASSWORD = [
+        'required',
+        'string',
+        'min:8',
+        'regex:/^(?=.*[a-z])(?=.*\d).+$/i',
+        'confirmed'
+    ];
+
     protected $fillable = [
         'email',
         'password',
@@ -28,5 +36,10 @@ class User extends Authenticatable
     public function isSuperAdmin()
     {
         return $this->admin == 2;
+    }
+
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = bcrypt($value);
     }
 }

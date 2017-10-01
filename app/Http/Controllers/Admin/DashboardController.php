@@ -8,9 +8,4 @@ class DashboardController extends AdminController
     {
         return view('admin.dashboard.index');
     }
-
-    public function about()
-    {
-        return view('admin.dashboard.index');
-    }
 }
