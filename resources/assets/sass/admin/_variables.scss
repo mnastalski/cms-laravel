@@ -12,6 +12,15 @@ $gray: #bababa;
 $gray-light: #f0f0f0;
 $gray-mid: #414141;
 
+// body
+$body-bg: $black-light;
+$body-color: $gray-light;
+
+// links
+$link-color: $blue-light;
+$link-hover-color: darken($blue-light, 8%);
+$link-hover-decoration: none;
+
 // fonts
 $font-size-smaller: .75rem;
 
@@ -31,6 +40,6 @@ $input-focus-color: darken($gray-light, 10%);
 $input-group-addon-bg: $black;
 
 // tables
-$table-border-color: $black-lighter;
-$table-accent-bg: lighten($black-light, 1%);
 $table-bg: lighten($black, 10%);
+$table-accent-bg: lighten($black-light, 1%);
+$table-border-color: $black-lighter;

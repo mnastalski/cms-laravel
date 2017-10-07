@@ -12,6 +12,7 @@
             <div class="col-6 text-right">
                 <a class="gray-light" href="{{ route('admin.profile') }}">
                     {{ $user->email }}
+                    <i class="fa fa-caret-down ml-1"></i>
                 </a>
 
                 <br>
@@ -33,7 +34,7 @@
         {!! AdminMenu::add()->route('admin.shop.categories')->label('Shop categories')->icon('fa-book')->get() !!}
     </div>
 
-    <div class="content-container">
+    <div class="main-container">
 
         @hasSection('header')
             <div class="row pt-3 pb-1 mx-3 content-header">

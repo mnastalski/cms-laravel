@@ -1,17 +1,3 @@
-body {
-  background-color: $black-light;
-  color: $gray-light;
-}
-
-a {
-  color: $blue-light;
-
-  @include hover-focus {
-    color: darken($blue-light, 8%);
-    text-decoration: none;
-  }
-}
-
 table {
   th {
     font-size: $font-size-smaller;
@@ -152,7 +138,7 @@ table {
   }
 }
 
-.content-container {
+.main-container {
   margin: 70px 0 0 220px;
 }
 
