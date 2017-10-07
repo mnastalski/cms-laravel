@@ -24,13 +24,13 @@
     </header>
 
     <div class="page-menu">
-            {{--<div class="page-menu-caret"><i class="fa fa-angle-double-left" aria-hidden="true"></i></div>--}}
+        {{--<div class="page-menu-caret"><i class="fa fa-angle-double-left" aria-hidden="true"></i></div>--}}
 
-            {!! AdminMenu::add()->route('admin.dashboard')->label('Dashboard')->icon('fa-home')->get() !!}
-            {!! AdminMenu::add()->route('admin.languages')->label('Languages')->icon('fa-language')->get() !!}
-            {!! AdminMenu::add()->route('admin.phrases')->label('Phrases')->icon('fa-font')->get() !!}
-            {!! AdminMenu::add()->route('admin.contents')->label('Content sections')->icon('fa-book')->get() !!}
-
+        {!! AdminMenu::add()->route('admin.dashboard')->label('Dashboard')->icon('fa-home')->get() !!}
+        {!! AdminMenu::add()->route('admin.languages')->label('Languages')->icon('fa-language')->get() !!}
+        {!! AdminMenu::add()->route('admin.phrases')->label('Phrases')->icon('fa-font')->get() !!}
+        {!! AdminMenu::add()->route('admin.contents')->label('Content sections')->icon('fa-book')->get() !!}
+        {!! AdminMenu::add()->route('admin.shop.categories')->label('Shop categories')->icon('fa-book')->get() !!}
     </div>
 
     <div class="content-container">

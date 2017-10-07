@@ -21,6 +21,8 @@ class CreateShopCategoriesTable extends Migration
             $table->string('name')->nullable(false);
             $table->boolean('is_featured')->unsigned()->default('0');
             $table->timestamps();
+
+            $table->foreign('parent_id')->references('id')->on('shop_categories')->onUpdate('cascade')->onDelete('restrict');
         });
     }
 

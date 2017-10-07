@@ -30,3 +30,14 @@ Route::group(['prefix' => 'contents'], function () {
     Route::get('destroy/{id}', 'ContentsController@destroy')->name('admin.contents.destroy');
     Route::get('{id}', 'ContentsController@create');
 });
+
+Route::group(['prefix' => 'shop'], function () {
+    Route::group(['prefix' => 'categories'], function () {
+        Route::get('/', 'ShopCategoriesController@index')->name('admin.shop.categories');
+        Route::get('create/{id?}', 'ShopCategoriesController@create')->name('admin.shop.categories.create');
+        Route::post('create/{id?}', 'ShopCategoriesController@store')->name('admin.shop.categories.store');
+        Route::get('destroy/{id}', 'ShopCategoriesController@destroy')->name('admin.shop.categories.destroy');
+        Route::get('up/{id}', 'ShopCategoriesController@up')->name('admin.shop.categories.up');
+        Route::get('down/{id}', 'ShopCategoriesController@down')->name('admin.shop.categories.down');
+    });
+});
