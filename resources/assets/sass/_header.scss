@@ -4,12 +4,13 @@
   nav {
     a {
       display: inline-block;
-      font-weight: bold;
-      padding: 6px 8px;
+      //font-weight: bold;
+      padding: .4rem .5rem;
       text-transform: uppercase;
 
       .nav-fa {
-        margin: 4px 6px 0 0;
+        font-size: 90%;
+        margin: .25rem .3rem 0 0;
       }
     }
   }
@@ -17,11 +18,10 @@
   .lang-select {
     cursor: pointer;
     display: block;
-    font-size: 12px;
     padding: 6px 0 6px 10px;
 
     .fa {
-      margin-top: 1px;
+      margin-top: 2px;
     }
   }
 

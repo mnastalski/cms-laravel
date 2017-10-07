@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <div class="container page-default text-justify">
+    <div class="container mt-4 text-justify">
         <p>Fusce malesuada consectetur finibus. Sed ultrices erat tincidunt odio convallis vulputate. Suspendisse erat
             quam, faucibus vel placerat at, maximus eget urna. Phasellus quis viverra enim, et ultrices libero. Donec
             tortor tellus, pulvinar sit amet tellus vel, imperdiet ultrices purus. Vivamus a porttitor metus, nec mattis

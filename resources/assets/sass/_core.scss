@@ -19,7 +19,7 @@
 }
 
 .item-group-header {
-  font-size: 24px;
+  font-size: 1.4rem;
   text-align: center;
   text-transform: uppercase;
 }
@@ -30,7 +30,7 @@
   width: 260px;
 
   img {
-    margin: 20px;
+    margin: 1.4rem;
   }
 
   .item-group-label {
@@ -38,19 +38,14 @@
   }
 }
 
-.page-default {
-  padding: 20px 0;
-}
-
 .page-error {
-  padding: 50px 0;
+  padding: 5rem 0;
 
   .error-code {
-    font-size: 96px;
+    font-size: 6rem;
   }
 
   .error-descr {
-    font-size: 12px;
     text-transform: uppercase;
   }
 }
