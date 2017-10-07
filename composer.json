@@ -6,12 +6,13 @@
     "type": "project",
     "require": {
         "php": ">=7.0.0",
+        "barryvdh/laravel-debugbar": "^2.4",
         "fideloper/proxy": "~3.3",
+        "gettext/languages": "^2.3",
+        "kalnoy/nestedset": "^4.3",
+        "laracasts/flash": "^3.0",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
-        "barryvdh/laravel-debugbar": "^2.4",
-        "gettext/languages": "^2.3",
-        "laracasts/flash": "^3.0",
         "laravelcollective/html": "^5.4",
         "watson/bootstrap-form": "^1.1"
     },
