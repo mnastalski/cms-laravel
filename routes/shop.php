@@ -7,4 +7,4 @@
 */
 
 
-Route::get('/', 'ShopController@index')->name('shop');
+Route::get('/{category_slug?}', 'ShopController@index')->name('shop');

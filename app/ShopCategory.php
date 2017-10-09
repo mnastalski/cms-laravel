@@ -33,4 +33,9 @@ class ShopCategory extends Model
             })
             ->pluck('name', 'id');
     }
+
+    public function products()
+    {
+        return $this->hasMany(ShopProduct::class, 'category_id');
+    }
 }

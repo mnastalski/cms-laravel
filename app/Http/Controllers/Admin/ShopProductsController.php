@@ -37,6 +37,14 @@ class ShopProductsController extends AdminController
             $request['slug'] = str_slug($request->post('name'), '-');
         }
 
+//        if ($id > 0) {
+//            $product = ShopProduct::findOrFail($id);
+//        }
+//
+//        $this->validate($request, [
+//            'slug' => $id > 0 && $product->slug == $request->slug ? '' : 'unique:' . (new ShopProduct())->getTable()
+//        ]);
+
         ShopProduct::updateOrCreate(
             ['id' => $id],
             $request->all()
