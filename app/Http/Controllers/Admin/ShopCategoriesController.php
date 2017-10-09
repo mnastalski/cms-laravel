@@ -36,6 +36,14 @@ class ShopCategoriesController extends AdminController
             $request['slug'] = str_slug($request->post('name'), '-');
         }
 
+        if ($id > 0) {
+            $category = ShopCategory::findOrFail($id);
+        }
+
+        $this->validate($request, [
+            'slug' => $id > 0 && $category->slug == $request->slug ? '' : 'unique:' . (new ShopCategory())->getTable()
+        ]);
+
         $request['is_featured'] = $request->has('is_featured');
 
         ShopCategory::updateOrCreate(
