@@ -23,7 +23,7 @@
                 <div class="item-group">
                     <img class="img-fluid" src="{{ asset('assets/img/categories/1.png') }}" alt="Cookies">
                     <div class="item-group-label">
-                        <a href="#" class="btn btn-brown">Check</a>
+                        <a href="{{ route('shop', [$item->slug]) }}" class="btn btn-brown">Check</a>
                     </div>
                 </div>
 
