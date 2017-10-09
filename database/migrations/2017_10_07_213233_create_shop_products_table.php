@@ -16,8 +16,9 @@ class CreateShopProductsTable extends Migration
         Schema::create('shop_products', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('category_id')->unsigned()->nullable(false);
-            $table->string('slug')->nullable(false);
+            $table->string('slug')->unique();
             $table->string('name')->nullable(false);
+            $table->decimal('price', '6')->unsigned();
             $table->text('description')->nullable(true);
             $table->integer('views')->unsigned()->default('0');
             $table->timestamps();

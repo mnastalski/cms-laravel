@@ -27,8 +27,9 @@ class ShopProductsController extends AdminController
     {
         $this->validate($request, [
             'category_id' => 'required|exists:' . (new ShopCategory())->getTable() . ',id',
-            'slug' => 'nullable|min:2|max:191',
-            'name' => 'required|min:2|max:191'
+            'name' => 'required|min:2|max:191',
+            'price' => 'required|numeric|min:0.01|max:9999.99',
+            'slug' => 'nullable|min:2|max:191'
         ]);
 
         if ($request->filled('slug')) {

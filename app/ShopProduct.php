@@ -10,6 +10,7 @@ class ShopProduct extends Model
         'category_id',
         'slug',
         'name',
+        'price',
         'description',
         'views'
     ];

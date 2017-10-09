@@ -13,6 +13,7 @@
                 <th style="width: 80px">ID</th>
                 <th style="width: 140px">Image</th>
                 <th>Name</th>
+                <th>Price</th>
                 <th>Slug</th>
                 <th>Category</th>
                 <th style="width: 80px">Views</th>
@@ -31,6 +32,9 @@
                     </td>
                     <td>
                         {{ $item->name }}
+                    </td>
+                    <td>
+                        ${{ $item->price }}
                     </td>
                     <td>
                         {{ $item->slug }}

@@ -17,7 +17,7 @@ class CreateShopCategoriesTable extends Migration
         Schema::create('shop_categories', function (Blueprint $table) {
             $table->increments('id');
             NestedSet::columns($table);
-            $table->string('slug')->nullable(false);
+            $table->string('slug')->unique();
             $table->string('name')->nullable(false);
             $table->boolean('is_featured')->unsigned()->default('0');
             $table->timestamps();

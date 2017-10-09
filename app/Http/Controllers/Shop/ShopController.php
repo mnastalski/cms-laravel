@@ -10,12 +10,11 @@ class ShopController extends Controller
 {
     public function index($category_slug = null)
     {
-        $categories = ShopCategory::whereNotNull('parent_id')->with('products')->defaultOrder()->get();
-
         if ($category_slug === null) {
             $products = ShopProduct::get();
         } else {
-            $products = ShopCategory::where('slug', $category_slug)->first()->products;
+            $category = ShopCategory::where('slug', $category_slug)->firstOrFail();
+            $products = $category->products;
         }
 
         return view('shop.categories.index', compact('categories', 'products'));
