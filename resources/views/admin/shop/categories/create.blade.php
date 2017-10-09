@@ -5,9 +5,9 @@
 @section('content_container')
     {!! BootForm::open(['model' => $model_data]) !!}
 
-    {!! BootForm::text('slug') !!}
-
     {!! BootForm::text('name', 'name*') !!}
+
+    {!! BootForm::text('slug') !!}
 
     {!! BootForm::select('parent_id', 'parent category*', $categories) !!}
 
