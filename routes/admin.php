@@ -40,4 +40,11 @@ Route::group(['prefix' => 'shop'], function () {
         Route::get('up/{id}', 'ShopCategoriesController@up')->name('admin.shop.categories.up');
         Route::get('down/{id}', 'ShopCategoriesController@down')->name('admin.shop.categories.down');
     });
+
+    Route::group(['prefix' => 'products'], function () {
+        Route::get('/', 'ShopProductsController@index')->name('admin.shop.products');
+        Route::get('create/{id?}', 'ShopProductsController@create')->name('admin.shop.products.create');
+        Route::post('create/{id?}', 'ShopProductsController@store')->name('admin.shop.products.store');
+        Route::get('destroy/{id}', 'ShopProductsController@destroy')->name('admin.shop.products.destroy');
+    });
 });

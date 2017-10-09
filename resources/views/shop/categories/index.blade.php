@@ -10,7 +10,9 @@
             </div>
 
             <div class="col-12 col-lg-9 ml-auto">
-                // products
+                @foreach ($products as $item)
+                    <div>{{ $item->name }}</div>
+                @endforeach
             </div>
         </div>
     </div>

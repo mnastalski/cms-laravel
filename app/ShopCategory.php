@@ -20,4 +20,17 @@ class ShopCategory extends Model
     protected $casts = [
         'is_featured' => 'boolean'
     ];
+
+    public static function selectList()
+    {
+        return self::withDepth()
+            ->defaultOrder()
+            ->get()
+            ->map(function ($item) {
+                $item->name = str_repeat('&nbsp;', $item->depth * 2) . $item->name;
+
+                return $item;
+            })
+            ->pluck('name', 'id');
+    }
 }

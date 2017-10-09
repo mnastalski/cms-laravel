@@ -31,7 +31,8 @@
         {!! AdminMenu::add()->route('admin.languages')->label('Languages')->icon('fa-language')->get() !!}
         {!! AdminMenu::add()->route('admin.phrases')->label('Phrases')->icon('fa-font')->get() !!}
         {!! AdminMenu::add()->route('admin.contents')->label('Content sections')->icon('fa-book')->get() !!}
-        {!! AdminMenu::add()->route('admin.shop.categories')->label('Shop categories')->icon('fa-book')->get() !!}
+        {!! AdminMenu::add()->route('admin.shop.categories')->label('Shop categories')->icon('fa-th')->get() !!}
+        {!! AdminMenu::add()->route('admin.shop.products')->label('Shop products')->icon('fa-square-o')->get() !!}
     </div>
 
     <div class="main-container">

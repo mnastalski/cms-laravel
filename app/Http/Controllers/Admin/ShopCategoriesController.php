@@ -17,15 +17,7 @@ class ShopCategoriesController extends AdminController
     public function create($id = 0)
     {
         $model_data = $id > 0 ? ShopCategory::findOrFail($id) : [];
-        $categories = ShopCategory::withDepth()
-            ->defaultOrder()
-            ->get()
-            ->map(function ($item) {
-                $item->name = str_repeat('&nbsp;', $item->depth * 2) . $item->name;
-
-                return $item;
-            })
-            ->pluck('name', 'id');
+        $categories = ShopCategory::selectList();
 
         return view('admin.shop.categories.create', compact('model_data', 'categories'));
     }
