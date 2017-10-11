@@ -6,7 +6,6 @@
     "type": "project",
     "require": {
         "php": ">=7.0.0",
-        "barryvdh/laravel-debugbar": "^2.4",
         "fideloper/proxy": "~3.3",
         "gettext/languages": "^2.3",
         "kalnoy/nestedset": "^4.3",
@@ -17,11 +16,12 @@
         "watson/bootstrap-form": "^1.1"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.1",
+        "barryvdh/laravel-ide-helper": "^2.4",
         "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~6.0",
-        "barryvdh/laravel-ide-helper": "^2.4"
+        "phpunit/phpunit": "~6.0"
     },
     "autoload": {
         "classmap": [

@@ -179,10 +179,7 @@ return [
         /*
          * Non-stock Service Providers...
          */
-        Barryvdh\Debugbar\ServiceProvider::class,
-        Collective\Html\HtmlServiceProvider::class,
-        Watson\BootstrapForm\BootstrapFormServiceProvider::class,
-        Laracasts\Flash\FlashServiceProvider::class
+        Watson\BootstrapForm\BootstrapFormServiceProvider::class
 
     ],
 
@@ -233,12 +230,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
-        'Form' => Collective\Html\FormFacade::class,
-        'Html' => Collective\Html\HtmlFacade::class,
         'BootForm' => Watson\BootstrapForm\Facades\BootstrapForm::class,
 
         'AdminMenu' => App\Helpers\AdminMenu::class,
-//        'BSForm' => App\Helpers\BSForm::class,
         'AdminUtil' => App\Helpers\AdminUtil::class
 
     ],
