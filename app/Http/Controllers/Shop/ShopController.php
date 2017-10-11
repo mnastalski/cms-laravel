@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Shop;
 
 use App\Http\Controllers\Controller;
-use App\ShopCategory;
 use App\ShopProduct;
 
 class ShopController extends Controller
@@ -11,10 +10,12 @@ class ShopController extends Controller
     public function index($category_slug = null)
     {
         if ($category_slug === null) {
-            $products = ShopProduct::get();
+            $products = ShopProduct::with('category')->get();
         } else {
-            $category = ShopCategory::where('slug', $category_slug)->firstOrFail();
-            $products = $category->products;
+            $products = ShopProduct::with('category')
+                ->whereHas('category', function ($q) use ($category_slug) {
+                    $q->where('slug', $category_slug);
+                })->get();
         }
 
         return view('shop.categories.index', compact('categories', 'products'));

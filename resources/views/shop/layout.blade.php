@@ -12,9 +12,9 @@
                     <a href="{{ route('shop') }}">All categories</a>
                 </div>
 
-                @foreach (\App\ShopCategory::whereNotNull('parent_id')->with('products')->defaultOrder()->get() as $item)
+                @foreach (\App\ShopCategory::whereNotNull('parent_id')->withCount('products')->defaultOrder()->get() as $item)
                     <div>
-                        <a href="{{ route('shop', [$item->slug]) }}">{{ $item->name . ' (' . $item->products->count() . ')' }}</a>
+                        <a href="{{ route('shop', [$item->slug]) }}">{{ $item->name . ' (' . $item->products_count . ')' }}</a>
                     </div>
                 @endforeach
             </div>
