@@ -15,6 +15,11 @@ class ShopProduct extends Model
         'views'
     ];
 
+    public function getUrlAttribute()
+    {
+        return route('shop.product.view', [$this->category->slug, $this->slug]);
+    }
+
     public function category()
     {
         return $this->belongsTo(ShopCategory::class, 'category_id');

@@ -19,14 +19,12 @@
         <div class="row justify-content-around">
 
             @foreach ($categories as $item)
-
                 <div class="item-group">
                     <img class="img-fluid" src="{{ asset('assets/img/categories/1.png') }}" alt="Cookies">
                     <div class="item-group-label">
                         <a href="{{ route('shop', [$item->slug]) }}" class="btn btn-brown">Check</a>
                     </div>
                 </div>
-
             @endforeach
 
         </div>
@@ -36,6 +34,14 @@
         </div>
 
         <h1 class="mt-4 item-group-header">most popular</h1>
+
+        <div class="row justify-content-around">
+            @foreach ($products_popular as $item)
+                <div class="col text-center">
+                    <a href="{{ $item->url }}">{{ $item->name }}</a>
+                </div>
+            @endforeach
+        </div>
 
     </div>
 @endsection
