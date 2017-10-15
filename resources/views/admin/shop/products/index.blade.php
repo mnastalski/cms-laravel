@@ -28,7 +28,9 @@
                         {{ $item->id }}
                     </td>
                     <td>
-                        {{ $item->image }}
+                        @if ($item->hasMedia('images'))
+                            {{ $item->thumbnail }}
+                        @endif
                     </td>
                     <td>
                         {{ $item->name }}

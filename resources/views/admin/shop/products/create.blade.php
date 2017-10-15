@@ -3,7 +3,7 @@
 @section('header', ($model_data ? 'Edit' : 'Add') . ' shop product')
 
 @section('content_container')
-    {!! BootForm::open(['model' => $model_data]) !!}
+    {!! BootForm::open(['model' => $model_data, 'files' => true]) !!}
 
     {!! BootForm::text('name', 'name*') !!}
 
@@ -13,7 +13,7 @@
 
     {!! BootForm::select('category_id', 'category*', $categories) !!}
 
-    {{--{!! BootForm::file('image') !!}--}}
+    {!! BootForm::file('thumbnail') !!}
 
     {!! BootForm::textarea('description') !!}
 

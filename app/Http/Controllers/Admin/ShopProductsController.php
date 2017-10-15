@@ -10,7 +10,7 @@ class ShopProductsController extends AdminController
 {
     public function index()
     {
-        $products = ShopProduct::with('category')->get();
+        $products = ShopProduct::with(['category', 'media'])->get();
 
         return view('admin.shop.products.index', compact('products'));
     }
@@ -29,7 +29,8 @@ class ShopProductsController extends AdminController
             'category_id' => 'required|exists:' . (new ShopCategory())->getTable() . ',id',
             'name' => 'required|min:2|max:191',
             'price' => 'required|numeric|min:0.01|max:9999.99',
-            'slug' => 'nullable|min:2|max:191'
+            'slug' => 'nullable|min:2|max:191',
+            'thumbnail' => 'image|max:256'
         ]);
 
         if ($request->filled('slug')) {
@@ -46,10 +47,18 @@ class ShopProductsController extends AdminController
             'slug' => $id > 0 && $product->slug == $request->slug ? '' : 'unique:' . (new ShopProduct())->getTable()
         ]);
 
-        ShopProduct::updateOrCreate(
+        $product_ = ShopProduct::updateOrCreate(
             ['id' => $id],
             $request->all()
         );
+
+        if ($request->has('thumbnail')) {
+            if ($id > 0 && $product_->hasMedia('images')) {
+                $product_->getMedia('images')[0]->delete();
+            }
+
+            $product_->addMedia($request->file('thumbnail'))->toMediaCollection('images');
+        }
 
         flash('Saved')->success();
 
