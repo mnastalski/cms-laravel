@@ -29,7 +29,7 @@
                     </td>
                     <td>
                         @if ($item->hasMedia('images'))
-                            {{ $item->thumbnail }}
+                            <img src="{{ $item->thumbnail_url }}" style="max-width: 50px; max-height: 50px">
                         @endif
                     </td>
                     <td>

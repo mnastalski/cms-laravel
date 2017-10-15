@@ -33,6 +33,15 @@ class ShopProduct extends Model implements HasMedia
         return $this->getMedia('images')[0];
     }
 
+    public function getThumbnailUrlAttribute()
+    {
+        if (!$this->hasMedia('images')) {
+            return null;
+        }
+
+        return route('image.product', [$this->id, $this->slug]);
+    }
+
     public function category()
     {
         return $this->belongsTo(ShopCategory::class, 'category_id');

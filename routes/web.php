@@ -21,6 +21,8 @@ Route::get('contact', 'PagesController@contact')->name('contact');
 Route::get('error', 'PagesController@error');
 
 
+Route::get('images/product/{product_id}/{slug}.jpg', 'ImageController@productThumbnail')->name('image.product');
+
 /*
 |--------------------------------------------------------------------------
 | Admin Login Routes
