@@ -4,6 +4,7 @@ namespace App\Helpers;
 
 class AdminMenuItem
 {
+    private $route;
     private $url;
     private $label;
     private $icon;
@@ -18,6 +19,7 @@ class AdminMenuItem
 
     public function route($route)
     {
+        $this->route = $route;
         $this->url = route($route);
 
         return $this;
@@ -62,6 +64,6 @@ class AdminMenuItem
 
     private function isActive()
     {
-        return url()->current() === $this->url;
+        return request()->routeIs($this->route . '*');
     }
 }
