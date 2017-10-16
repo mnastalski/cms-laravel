@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\ShopProduct;
 use Illuminate\Http\Request;
 use App\ShopCategory;
+use App\ShopProduct;
 
 class ShopProductsController extends AdminController
 {
@@ -25,39 +25,29 @@ class ShopProductsController extends AdminController
 
     public function store(Request $request, $id = 0)
     {
+        $product = ShopProduct::firstOrNew(['id' => $id]);
+
+        $request['slug'] = str_slug($request->post($request->filled('slug') ? 'slug' : 'name'), '-');
+
         $this->validate($request, [
-            'category_id' => 'required|exists:' . (new ShopCategory())->getTable() . ',id',
+            'category_id' => 'required|exists:' . $product->getTable() . ',id',
             'name' => 'required|min:2|max:191',
             'price' => 'required|numeric|min:0.01|max:9999.99',
-            'slug' => 'nullable|min:2|max:191',
+            'slug' => 'min:2|max:191' . ($id > 0 && $product->slug == $request->slug ? '' : 'unique:' . $product->getTable()),
             'thumbnail' => 'image|max:256'
         ]);
 
-        if ($request->filled('slug')) {
-            $request['slug'] = str_slug($request->post('slug'), '-');
-        } else {
-            $request['slug'] = str_slug($request->post('name'), '-');
-        }
-
-        if ($id > 0) {
-            $product = ShopProduct::findOrFail($id);
-        }
-
-        $this->validate($request, [
-            'slug' => $id > 0 && $product->slug == $request->slug ? '' : 'unique:' . (new ShopProduct())->getTable()
-        ]);
-
-        $product_ = ShopProduct::updateOrCreate(
+        $product = ShopProduct::updateOrCreate(
             ['id' => $id],
             $request->all()
         );
 
         if ($request->has('thumbnail')) {
-            if ($id > 0 && $product_->hasMedia('images')) {
-                $product_->getMedia('images')[0]->delete();
+            if ($id > 0 && $product->hasMedia('images')) {
+                $product->getMedia('images')[0]->delete();
             }
 
-            $product_->addMedia($request->file('thumbnail'))->toMediaCollection('images');
+            $product->addMedia($request->file('thumbnail'))->toMediaCollection('images');
         }
 
         flash('Saved')->success();
