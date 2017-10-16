@@ -101,7 +101,8 @@ return [
 
     'custom' => [
         'password_new' => [
-            'regex' => 'Password must contain at least 1 letter and 1 number.'
+            'regex' => 'Password must contain at least 1 letter and 1 number.',
+            'invalid' => 'Invalid password'
         ]
     ],
 

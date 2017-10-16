@@ -8,11 +8,6 @@ use Auth;
 
 class ValidCurrentPassword implements Rule
 {
-    public function __construct()
-    {
-        //
-    }
-
     public function passes($attribute, $value)
     {
         if (!Hash::check($value, Auth::user()->password)) {
@@ -24,6 +19,6 @@ class ValidCurrentPassword implements Rule
 
     public function message()
     {
-        return 'Invalid password';
+        return __('validation.custom.password_new.invalid');
     }
 }
