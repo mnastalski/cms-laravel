@@ -3,18 +3,32 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    protected function getModelData($model, $id = 0)
+    private function setRedirectMessage($message = null)
     {
-        if ($id > 0) {
-            return $model::findOrFail($id);
+        if ($message !== false) {
+            flash($message === null ? 'Saved successfully' : $message)->success();
+        }
+    }
+
+    protected function redirectStore(Request $request, $route, $message = null)
+    {
+        $this->setRedirectMessage($message);
+
+        if ($request->has('saveandstay')) {
+            return redirect()->back();
         }
 
-        $data = new \stdClass();
-        $data->id = false;
+        return redirect($route);
+    }
 
-        return $data;
+    protected function redirectBack($message = null)
+    {
+        $this->setRedirectMessage($message);
+
+        return redirect()->back();
     }
 }

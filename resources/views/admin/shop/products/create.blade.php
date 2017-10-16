@@ -17,6 +17,8 @@
 
     {!! BootForm::textarea('description') !!}
 
+    {!! BootForm::submit('Save and stay', ['name' => 'saveandstay']) !!}
+
     {!! BootForm::submit('Save') !!}
 
     {!! AdminUtil::btnCancel() !!}

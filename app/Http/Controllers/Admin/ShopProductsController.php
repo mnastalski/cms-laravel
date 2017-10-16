@@ -50,15 +50,13 @@ class ShopProductsController extends AdminController
             $product->addMedia($request->file('thumbnail'))->toMediaCollection('images');
         }
 
-        flash('Saved')->success();
-
-        return redirect()->route('admin.shop.products');
+        return $this->redirectStore($request, route('admin.shop.products.create', $id));
     }
 
     public function destroy($id)
     {
         ShopProduct::destroy($id);
 
-        return redirect()->back();
+        return $this->redirectBack();
     }
 }
