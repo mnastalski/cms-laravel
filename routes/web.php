@@ -23,6 +23,24 @@ Route::get('error', 'PagesController@error');
 
 Route::get('images/product/{product_id}/{slug}.jpg', 'ImageController@productThumbnail')->name('image.product');
 
+
+/*
+|--------------------------------------------------------------------------
+| User Login Routes
+|--------------------------------------------------------------------------
+*/
+
+
+Route::group([
+    'namespace' => 'User',
+    'prefix' => 'user'
+], function () {
+    Route::get('login', 'LoginController@showLoginForm')->name('user.login');
+    Route::post('login', 'LoginController@login')->name('user.login.post');
+    Route::get('logout', 'LoginController@logout')->name('user.logout');
+});
+
+
 /*
 |--------------------------------------------------------------------------
 | Admin Login Routes

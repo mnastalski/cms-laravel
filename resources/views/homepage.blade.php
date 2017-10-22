@@ -1,12 +1,28 @@
 @extends('layout')
 
 @section('header_banner')
-    <div class="row">
-        <div class="col-4 offset-1 brown-light">
+    <div class="row brown-light">
+        <div class="col-4 offset-1">
             <h4>We bake and cook and bake and cook</h4>
             <p class="small">We create and make and bake and cookies are great I love ice cream, at condimentum ante
                 fringilla vel. Maecenas dapibus neque non nibh porttitor, in malesuada libero tempus. In eu pharetra
                 metus. Duis varius arcu dapibus, interdum ipsum ac, condimentum ante.</p>
+        </div>
+
+        <div class="col-4 ml-auto text-right">
+            @auth
+                <p>Welcome {{ $user->email }}</p>
+
+                @if ($user->isAdmin())
+                    <a class="btn btn-success" href="{{ route('admin.dashboard') }}" target="_blank">Admin panel</a>
+                @endif
+
+                <a class="btn btn-success" href="{{ route('user.logout') }}">Logout</a>
+            @endauth
+
+            @guest
+                <a class="btn btn-success" href="{{ route('user.login') }}">Login</a>
+            @endguest
         </div>
     </div>
 @endsection

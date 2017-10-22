@@ -2,6 +2,14 @@
   color: $brown-light;
 }
 
+.btn {
+  cursor: pointer;
+
+  @include hover-focus {
+    box-shadow: none;
+  }
+}
+
 .btn-brown {
   background-color: $brown;
   color: $white;

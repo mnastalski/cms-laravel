@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\User\LoginController as BaseLoginController;
 use Illuminate\Http\Request;
 use Auth;
 
-class LoginController extends \App\Http\Controllers\Auth\LoginController
+class LoginController extends BaseLoginController
 {
     public function redirectTo()
     {
