@@ -21,8 +21,12 @@
             @endauth
 
             @guest
-                <a class="btn btn-success" href="{{ route('user.login') }}">Login</a>
-                <a class="btn btn-success" href="{{ route('user.register') }}">Register</a>
+                <p>
+                    <a class="btn btn-success" href="{{ route('user.login') }}">Login</a>
+                    <a class="btn btn-success" href="{{ route('user.register') }}">Register</a>
+                </p>
+
+                <a class="brown-light" href="{{ route('user.password.remind') }}">Forgot password</a>
             @endguest
         </div>
     </div>

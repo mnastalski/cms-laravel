@@ -41,6 +41,16 @@ Route::group([
 
     Route::get('register', 'RegisterController@showRegistrationForm')->name('user.register');
     Route::post('register', 'RegisterController@register')->name('user.register.post');
+
+    Route::group([
+        'prefix' => 'password'
+    ], function () {
+        Route::get('find', 'ForgotPasswordController@showLinkRequestForm')->name('user.password.remind');
+        Route::post('find', 'ForgotPasswordController@sendResetLinkEmail')->name('user.password.remind.post');
+
+        Route::get('reset/{token?}', 'ResetPasswordController@showResetForm')->name('user.password.reset');
+        Route::post('reset', 'ResetPasswordController@reset')->name('user.password.reset.post');
+    });
 });
 
 
