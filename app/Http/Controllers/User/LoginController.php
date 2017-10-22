@@ -28,11 +28,19 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    /**
+     * Show the application's login form.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function showLoginForm()
     {
         return view('user.auth.login');
     }
 
+    /**
+     * Where to redirect users after logging in.
+     */
     public function redirectTo()
     {
         return route('home');

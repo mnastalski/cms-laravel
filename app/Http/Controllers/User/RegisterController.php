@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\User;
 
-use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\User;
 
 class RegisterController extends Controller
 {
@@ -23,13 +24,6 @@ class RegisterController extends Controller
     use RegistersUsers;
 
     /**
-     * Where to redirect users after registration.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/home';
-
-    /**
      * Create a new controller instance.
      *
      * @return void
@@ -37,6 +31,24 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+    }
+
+    /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showRegistrationForm()
+    {
+        return view('user.auth.register');
+    }
+
+    /**
+     * Where to redirect users after registration.
+     */
+    public function redirectTo()
+    {
+        return route('home');
     }
 
     /**
@@ -65,5 +77,16 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => $data['password'],
         ]);
+    }
+
+    /**
+     * The user has been registered.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  mixed  $user
+     */
+    protected function registered(Request $request, $user)
+    {
+        flash('Your account has been created successfully! You\'ve been logged in.')->success();
     }
 }

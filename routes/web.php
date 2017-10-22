@@ -38,6 +38,9 @@ Route::group([
     Route::get('login', 'LoginController@showLoginForm')->name('user.login');
     Route::post('login', 'LoginController@login')->name('user.login.post');
     Route::get('logout', 'LoginController@logout')->name('user.logout');
+
+    Route::get('register', 'RegisterController@showRegistrationForm')->name('user.register');
+    Route::post('register', 'RegisterController@register')->name('user.register.post');
 });
 
 

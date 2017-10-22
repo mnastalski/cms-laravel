@@ -22,6 +22,7 @@
 
             @guest
                 <a class="btn btn-success" href="{{ route('user.login') }}">Login</a>
+                <a class="btn btn-success" href="{{ route('user.register') }}">Register</a>
             @endguest
         </div>
     </div>

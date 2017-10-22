@@ -26,6 +26,25 @@
   margin-bottom: auto;
 }
 
+
+.form-group {
+  .help-block {
+    display: block;
+  }
+
+  &.has-error {
+    input,
+    textarea {
+      border: 1px solid $red;
+    }
+
+    .help-block {
+      color: $red;
+    }
+  }
+}
+
+
 .item-group-header {
   font-size: 1.4rem;
   text-align: center;
