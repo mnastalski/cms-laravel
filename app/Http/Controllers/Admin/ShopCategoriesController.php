@@ -24,24 +24,14 @@ class ShopCategoriesController extends AdminController
 
     public function store(Request $request, $id = 0)
     {
-        $this->validate($request, [
-            'parent_id' => 'required|exists:' . (new ShopCategory())->getTable() . ',id',
-            'slug' => 'nullable|min:2|max:191',
-            'name' => 'required|min:2|max:191'
-        ]);
+        $category = ShopCategory::firstOrNew(['id' => $id]);
 
-        if ($request->filled('slug')) {
-            $request['slug'] = str_slug($request->post('slug'), '-');
-        } else {
-            $request['slug'] = str_slug($request->post('name'), '-');
-        }
-
-        if ($id > 0) {
-            $category = ShopCategory::findOrFail($id);
-        }
+        $request['slug'] = str_slug($request->post($request->filled('slug') ? 'slug' : 'name'), '-');
 
         $this->validate($request, [
-            'slug' => $id > 0 && $category->slug == $request->slug ? '' : 'unique:' . (new ShopCategory())->getTable()
+            'parent_id' => 'required|exists:' . $category->getTable() . ',id',
+            'name' => 'required|min:2|max:191',
+            'slug' => 'min:2|max:191' . ($id > 0 && $category->slug == $request->slug ? '' : 'unique:' . $category->getTable())
         ]);
 
         $request['is_featured'] = $request->has('is_featured');
