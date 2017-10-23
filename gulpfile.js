@@ -40,8 +40,7 @@ gulp.task('build:dev', ['sass:dev', 'js:dev', 'vendor']);
 gulp.task('sass:dev', function () {
     return gulp.src(Locations.input.sass)
         .pipe(sass({
-            importer: tildeImporter,
-            outputStyle: 'compressed'
+            importer: tildeImporter
         })).on('error', sass.logError)
         .pipe(rename({dirname: ''}))
         .pipe(gulp.dest(Locations.output.css));
@@ -50,7 +49,8 @@ gulp.task('sass:dev', function () {
 gulp.task('sass:prod', function () {
     return gulp.src(Locations.input.sass)
         .pipe(sass({
-            importer: tildeImporter
+            importer: tildeImporter,
+            outputStyle: 'compressed'
         })).on('error', sass.logError)
         .pipe(rename({dirname: ''}))
         .pipe(gulp.dest(Locations.output.css));
