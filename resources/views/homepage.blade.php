@@ -2,7 +2,7 @@
 
 @section('header_banner')
     <div class="row brown-light">
-        <div class="col-4 offset-1">
+        <div class="col-4">
             <h4>We bake and cook and bake and cook</h4>
             <p class="small">We create and make and bake and cookies are great I love ice cream, at condimentum ante
                 fringilla vel. Maecenas dapibus neque non nibh porttitor, in malesuada libero tempus. In eu pharetra
