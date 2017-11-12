@@ -3,7 +3,7 @@
 @section('header', 'Available languages')
 
 @section('btn_bar')
-    {!! AdminUtil::btnBar(route('admin.languages'), 'Add language') !!}
+    {!! AdminUtil::btnBar(route('admin.languages.create'), 'Add language') !!}
 @endsection
 
 @section('content_container')
@@ -32,17 +32,17 @@
                         {{ $item->name }}
                     </td>
                     <td>
-                        {{ $item->active ? 'Active' : 'Inactive' }}
+                        {{ $item->is_active ? 'Active' : 'Inactive' }}
                     </td>
                     <td>
-                        @if ($item->active)
-                            {!! AdminUtil::btn(route('admin.languages'), 'fa-eye-slash', 'Deactivate') !!}
+                        @if ($item->is_active)
+                            {!! AdminUtil::btn(route('admin.languages.status', [$item->id]), 'fa-eye-slash', 'Deactivate') !!}
                         @else
-                            {!! AdminUtil::btn(route('admin.languages'), 'fa-eye', 'Activate') !!}
+                            {!! AdminUtil::btn(route('admin.languages.status', [$item->id]), 'fa-eye', 'Activate') !!}
                         @endif
 
                         @if ($item->key !== \Lang::getFallback())
-                            {!! AdminUtil::btnDelete(route('admin.languages'), 'Delete') !!}
+                            {!! AdminUtil::btnDelete(route('admin.languages.destroy', [$item->id]), 'Delete') !!}
                         @endif
                     </td>
                 </tr>

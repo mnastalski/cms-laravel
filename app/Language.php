@@ -7,17 +7,19 @@ use Gettext\Languages\Language as CLDR;
 
 class Language extends Model
 {
+    public $timestamps = false;
+
     protected $fillable = [
         'key',
-        'active'
+        'is_active'
     ];
 
     protected $casts = [
-        'active' => 'boolean'
+        'is_active' => 'boolean'
     ];
 
-    public function getNameAttribute()
-    {
-        return CLDR::getById($this->key)->name;
-    }
+//    public function getNameAttribute()
+//    {
+//        return CLDR::getById($this->key)->name;
+//    }
 }
