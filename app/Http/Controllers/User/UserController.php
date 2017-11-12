@@ -1,22 +1,25 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\User;
 
+use App\Http\Controllers\Controller;
 use App\Rules\ValidCurrentPassword;
 use Illuminate\Http\Request;
-use App\Content;
 use App\User;
 
-class ProfileController extends AdminController
+class UserController extends Controller
 {
     public function index()
     {
-        $contents = Content::all();
-
-        return view('admin.profile.index', compact('contents'));
+        return view('user.profile.index');
     }
 
-    public function store(Request $request)
+    public function password()
+    {
+        return view('user.profile.password');
+    }
+
+    public function passwordStore(Request $request)
     {
         $this->validate($request, [
             'password' => [
@@ -31,6 +34,6 @@ class ProfileController extends AdminController
 
         flash('Your password has been changed successfully')->success();
 
-        return redirect()->route('admin.profile');
+        return redirect()->route('user.profile');
     }
 }

@@ -26,7 +26,7 @@ Route::get('images/product/{product_id}/{slug}.jpg', 'ImageController@productThu
 
 /*
 |--------------------------------------------------------------------------
-| User Login Routes
+| User Login and Authed Routes
 |--------------------------------------------------------------------------
 */
 
@@ -50,6 +50,14 @@ Route::group([
 
         Route::get('reset/{token?}', 'ResetPasswordController@showResetForm')->name('user.password.reset');
         Route::post('reset', 'ResetPasswordController@reset')->name('user.password.reset.post');
+    });
+
+    Route::group([
+        'middleware' => 'auth'
+    ], function () {
+        Route::get('profile', 'UserController@index')->name('user.profile');
+        Route::get('password', 'UserController@password')->name('user.profile.password');
+        Route::post('password', 'UserController@passwordStore')->name('user.profile.password.store');
     });
 });
 

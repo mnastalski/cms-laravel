@@ -9,7 +9,7 @@
 
 Route::get('/', function () {
     return redirect()->route('admin.dashboard');
-});
+})->name('admin');
 
 Route::get('dashboard', 'DashboardController@index')->name('admin.dashboard');
 Route::get('profile', 'ProfileController@index')->name('admin.profile');

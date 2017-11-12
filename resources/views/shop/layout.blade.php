@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-12 col-lg-2">
                 <div class="mb-3 small font-weight-bold text-uppercase">
-                    CATEGORIES
+                    Categories
                 </div>
 
                 <div class="mb-3">

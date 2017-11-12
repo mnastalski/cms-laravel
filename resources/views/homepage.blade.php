@@ -13,8 +13,10 @@
             @auth
                 <p>Welcome {{ $user->email }}</p>
 
+                <a class="btn btn-success" href="{{ route('user.profile') }}">Profile</a>
+
                 @if ($user->isAdmin())
-                    <a class="btn btn-success" href="{{ route('admin.dashboard') }}" target="_blank">Admin panel</a>
+                    <a class="btn btn-success" href="{{ route('admin') }}" target="_blank">Admin panel</a>
                 @endif
 
                 <a class="btn btn-success" href="{{ route('user.logout') }}">Logout</a>

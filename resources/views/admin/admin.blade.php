@@ -4,7 +4,7 @@
     <header class="container-fluid">
         <div class="row">
             <div class="col-6">
-                <a href="{{ route('admin.dashboard') }}">
+                <a href="{{ route('admin') }}">
                     <img src="{{ asset('assets/img/logo_admin_2.png') }}" alt="">
                 </a>
             </div>
