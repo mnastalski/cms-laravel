@@ -7,6 +7,8 @@ Homestead.yaml
 npm-debug.log
 .env
 composer.lock
+_ide_helper.php
+.phpstorm.meta.php
 notes.txt
 
 /public/assets/css/*
