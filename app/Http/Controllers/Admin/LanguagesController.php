@@ -29,8 +29,7 @@ class LanguagesController extends AdminController
         ]);
 
         $language = new Language();
-        $language->key = $request->key;
-        $language->name = CLDR::getById($request->key)->name;
+        $language->key = $request->input('key');
         $language->is_active = $request->has('is_active');
         $language->save();
 

@@ -18,8 +18,12 @@ class Language extends Model
         'is_active' => 'boolean'
     ];
 
-//    public function getNameAttribute()
-//    {
-//        return CLDR::getById($this->key)->name;
-//    }
+    protected static function boot()
+    {
+        parent::boot();
+
+        self::saving(function($model) {
+            $model->name = CLDR::getById($model->key)->name;
+        });
+    }
 }
