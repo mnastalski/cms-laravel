@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use Gettext\Languages\Language as CLDR;
 use App\Language;
+use Lang;
 
 class LanguagesController extends AdminController
 {
@@ -40,7 +41,15 @@ class LanguagesController extends AdminController
 
     public function destroy($id)
     {
-        Language::destroy($id);
+        $language = Language::find($id);
+
+        if ($language->key === Lang::getFallback()) {
+            flash('You cannot delete the fallback language')->error();
+
+            return redirect()->back();
+        }
+
+        $language->delete();
 
         return $this->redirectBack();
     }
