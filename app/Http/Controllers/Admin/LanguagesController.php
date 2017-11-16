@@ -25,11 +25,13 @@ class LanguagesController extends AdminController
     public function store(Request $request)
     {
         $this->validate($request, [
-            'key' => 'required|max:6|unique:' . (new Language())->getTable()
+            'key' => 'required|max:6|unique:' . (new Language())->getTable(),
+            'icon' => 'max:10'
         ]);
 
         $language = new Language();
         $language->key = $request->input('key');
+        $language->icon = $request->input('icon');
         $language->is_active = $request->has('is_active');
         $language->save();
 

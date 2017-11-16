@@ -28,7 +28,7 @@
                         {{ $item->key }}
                     </td>
                     <td>
-                        <span class="flag-icon flag-icon-{{ $item->key == 'en' ? 'gb' : $item->key }}"></span>
+                        <span class="flag-icon{{ $item->icon ? ' flag-icon-' . $item->icon : '' }}" title="{{ $item->icon }}"></span>
                         {{ $item->name }}
                     </td>
                     <td>

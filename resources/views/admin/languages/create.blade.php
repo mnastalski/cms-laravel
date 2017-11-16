@@ -7,6 +7,8 @@
 
     {!! BootForm::select('key', 'Language', $languages) !!}
 
+    {!! BootForm::text('icon', 'Icon') !!}
+
     {!! BootForm::checkbox('is_active', 'Active', 1, ['checked' => true]) !!}
 
     {!! BootForm::submit('Save') !!}
