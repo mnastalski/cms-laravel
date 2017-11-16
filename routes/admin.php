@@ -17,8 +17,8 @@ Route::post('profile', 'ProfileController@store')->name('admin.profile.store');
 
 Route::group(['prefix' => 'languages'], function () {
     Route::get('/', 'LanguagesController@index')->name('admin.languages');
-    Route::get('/create', 'LanguagesController@create')->name('admin.languages.create')->middleware('superadmin');
-    Route::post('/create', 'LanguagesController@store')->name('admin.languages.store')->middleware('superadmin');
+    Route::get('/create/{id?}', 'LanguagesController@create')->name('admin.languages.create')->middleware('superadmin');
+    Route::post('/create/{id?}', 'LanguagesController@store')->name('admin.languages.store')->middleware('superadmin');
     Route::get('/destroy/{id}', 'LanguagesController@destroy')->name('admin.languages.destroy')->middleware('superadmin');
     Route::get('/status/{id}', 'LanguagesController@status')->name('admin.languages.status');
 });

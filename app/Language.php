@@ -11,6 +11,7 @@ class Language extends Model
 
     protected $fillable = [
         'key',
+        'icon',
         'is_active'
     ];
 

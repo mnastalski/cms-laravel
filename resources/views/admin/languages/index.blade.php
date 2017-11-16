@@ -41,8 +41,10 @@
                             {!! AdminUtil::btn(route('admin.languages.status', [$item->id]), 'fa-eye', 'Activate') !!}
                         @endif
 
+                        {!! AdminUtil::btnEdit(route('admin.languages.create', [$item->id])) !!}
+
                         @if ($item->key !== \Lang::getFallback())
-                            {!! AdminUtil::btnDelete(route('admin.languages.destroy', [$item->id]), 'Delete') !!}
+                            {!! AdminUtil::btnDelete(route('admin.languages.destroy', [$item->id])) !!}
                         @endif
                     </td>
                 </tr>

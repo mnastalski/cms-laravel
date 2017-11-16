@@ -16,24 +16,26 @@ class LanguagesController extends AdminController
         return view('admin.languages.index', compact('languages'));
     }
 
-    public function create()
+    public function create($id = 0)
     {
+        $model_data = $id > 0 ? Language::findOrFail($id) : [];
         $languages = collect(CLDR::getAll())->pluck('name', 'id');
 
-        return view('admin.languages.create', compact('languages'));
+        return view('admin.languages.create', compact('model_data', 'languages'));
     }
 
-    public function store(Request $request)
+    public function store(Request $request, $id = 0)
     {
+        $language = Language::firstOrNew(['id' => $id]);
+
         $this->validate($request, [
-            'key' => 'required|max:6|unique:' . (new Language())->getTable(),
+            'key' => 'sometimes|required|max:6|unique:' . $language->getTable(),
             'icon' => 'max:10'
         ]);
 
-        $language = new Language();
-        $language->key = $request->input('key');
-        $language->icon = $request->input('icon');
-        $language->is_active = $request->has('is_active');
+        $request['is_active'] = $request->has('is_active');
+
+        $language->fill($request->all());
         $language->save();
 
         return $this->redirectStore($request, route('admin.languages'));

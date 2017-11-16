@@ -1,11 +1,15 @@
 @extends('admin.admin')
 
-@section('header', 'Add language')
+@section('header', ($model_data ? 'Edit' : 'Add') . ' language')
 
 @section('content_container')
-    {!! BootForm::open() !!}
+    {!! BootForm::open(['model' => $model_data]) !!}
 
-    {!! BootForm::select('key', 'Language', $languages) !!}
+    @if ($model_data)
+        {!! BootForm::text('name', 'Language', $model_data->name, ['disabled' => true]) !!}
+    @else
+        {!! BootForm::select('key', 'Language', $languages) !!}
+    @endif
 
     {!! BootForm::text('icon', 'Icon') !!}
 
