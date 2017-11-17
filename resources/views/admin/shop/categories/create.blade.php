@@ -15,6 +15,8 @@
 
     {!! BootForm::checkbox('is_featured', 'Featured') !!}
 
+    {!! BootForm::submit('Save and stay', ['name' => 'saveandstay']) !!}
+
     {!! BootForm::submit('Save') !!}
 
     {!! AdminUtil::btnCancel() !!}

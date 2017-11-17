@@ -10,7 +10,7 @@
     <table class="table table-striped table-bordered table-actions">
         <thead>
             <tr>
-                <th class="col-md-1">ID</th>
+                <th style="width: 80px">ID</th>
                 <th style="width: 140px">Image</th>
                 <th>Name</th>
                 <th>Slug</th>

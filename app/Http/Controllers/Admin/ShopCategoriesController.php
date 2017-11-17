@@ -31,19 +31,15 @@ class ShopCategoriesController extends AdminController
         $this->validate($request, [
             'parent_id' => 'required|exists:' . $category->getTable() . ',id',
             'name' => 'required|min:2|max:191',
-            'slug' => 'min:2|max:191' . ($id > 0 && $category->slug == $request->slug ? '' : 'unique:' . $category->getTable())
+            'slug' => 'min:2|max:191' . ($id > 0 && $category->slug == $request->slug ? '' : '|unique:' . $category->getTable())
         ]);
 
         $request['is_featured'] = $request->has('is_featured');
 
-        ShopCategory::updateOrCreate(
-            ['id' => $id],
-            $request->all()
-        );
+        $category->fill($request->all());
+        $category->save();
 
-        flash('Saved')->success();
-
-        return redirect()->route('admin.shop.categories');
+        return $this->redirectStore($request, route('admin.shop.categories'));
     }
 
     public function destroy($id)
@@ -51,29 +47,27 @@ class ShopCategoriesController extends AdminController
         $category = ShopCategory::find($id);
 
         if ($category->children->count() > 0) {
-            flash('Cannot delete a category that has sub categories')->error();
-        } else {
-            $category->delete();
+            flash('You cannot delete a category that has sub categories')->error();
+
+            return redirect()->back();
         }
 
-        return redirect()->back();
+        $category->delete();
+
+        return $this->redirectBack();
     }
 
     public function up($id)
     {
         ShopCategory::find($id)->up();
 
-        flash('Moved')->success();
-
-        return redirect()->back();
+        return $this->redirectBack();
     }
 
     public function down($id)
     {
         ShopCategory::find($id)->down();
 
-        flash('Moved')->success();
-
-        return redirect()->back();
+        return $this->redirectBack();
     }
 }

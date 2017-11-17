@@ -30,17 +30,15 @@ class ShopProductsController extends AdminController
         $request['slug'] = str_slug($request->post($request->filled('slug') ? 'slug' : 'name'), '-');
 
         $this->validate($request, [
-            'category_id' => 'required|exists:' . $product->getTable() . ',id',
+            'category_id' => 'required|exists:' . (new ShopCategory())->getTable() . ',id',
             'name' => 'required|min:2|max:191',
             'price' => 'required|numeric|min:0.01|max:9999.99',
-            'slug' => 'min:2|max:191' . ($id > 0 && $product->slug == $request->slug ? '' : 'unique:' . $product->getTable()),
+            'slug' => 'min:2|max:191' . ($id > 0 && $product->slug == $request->slug ? '' : '|unique:' . $product->getTable()),
             'thumbnail' => 'image|max:256'
         ]);
 
-        $product = ShopProduct::updateOrCreate(
-            ['id' => $id],
-            $request->all()
-        );
+        $product->fill($request->all());
+        $product->save();
 
         if ($request->has('thumbnail')) {
             if ($id > 0 && $product->hasMedia('images')) {
@@ -50,7 +48,7 @@ class ShopProductsController extends AdminController
             $product->addMedia($request->file('thumbnail'))->toMediaCollection('images');
         }
 
-        return $this->redirectStore($request, route('admin.shop.products.create', $id));
+        return $this->redirectStore($request, route('admin.shop.products'));
     }
 
     public function destroy($id)
