@@ -39,7 +39,11 @@ class ShopCategoriesController extends AdminController
         $category->fill($request->all());
         $category->save();
 
-        return $this->redirectStore($request, route('admin.shop.categories'));
+        return $this->redirectStore(
+            $request,
+            route('admin.shop.categories'),
+            route('admin.shop.categories.create', [$category->id])
+        );
     }
 
     public function destroy($id)

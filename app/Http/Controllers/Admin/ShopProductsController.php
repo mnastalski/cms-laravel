@@ -48,7 +48,11 @@ class ShopProductsController extends AdminController
             $product->addMedia($request->file('thumbnail'))->toMediaCollection('images');
         }
 
-        return $this->redirectStore($request, route('admin.shop.products'));
+        return $this->redirectStore(
+            $request,
+            route('admin.shop.products'),
+            route('admin.shop.products.create', [$product->id])
+        );
     }
 
     public function destroy($id)

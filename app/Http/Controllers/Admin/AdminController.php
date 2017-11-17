@@ -14,15 +14,19 @@ class AdminController extends Controller
         }
     }
 
-    protected function redirectStore(Request $request, $route, $message = null)
+    protected function redirectStore(Request $request, $url, $url_stay = false, $message = null)
     {
         $this->setRedirectMessage($message);
 
         if ($request->has('saveandstay')) {
+            if ($url_stay) {
+                return redirect($url_stay);
+            }
+
             return redirect()->back();
         }
 
-        return redirect($route);
+        return redirect($url);
     }
 
     protected function redirectBack($message = null)
