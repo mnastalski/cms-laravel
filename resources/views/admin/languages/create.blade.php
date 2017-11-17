@@ -17,7 +17,7 @@
 
     {!! BootForm::submit('Save') !!}
 
-    {!! AdminUtil::btnCancel() !!}
+    {!! AdminUtil::btnCancel(route('admin.languages')) !!}
 
     {!! BootForm::close() !!}
 @endsection

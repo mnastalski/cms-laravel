@@ -21,7 +21,7 @@
 
     {!! BootForm::submit('Save') !!}
 
-    {!! AdminUtil::btnCancel() !!}
+    {!! AdminUtil::btnCancel(route('admin.shop.products')) !!}
 
     {!! BootForm::close() !!}
 @endsection

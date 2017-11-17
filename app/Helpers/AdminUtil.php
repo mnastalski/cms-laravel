@@ -40,7 +40,7 @@ class AdminUtil
         return self::btn($url, $icon, false, ['class' => 'btn-panel'], $label);
     }
 
-    public static function btnCancel($label = 'Cancel', $url = null, $attributes = [])
+    public static function btnCancel($url = null, $label = 'Cancel', $attributes = [])
     {
         if ($url === null) {
             $url = url()->previous();

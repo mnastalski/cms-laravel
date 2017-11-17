@@ -15,7 +15,7 @@
 
     {!! BootForm::submit('Save') !!}
 
-    {!! AdminUtil::btnCancel() !!}
+    {!! AdminUtil::btnCancel(route('admin')) !!}
 
     {!! BootForm::close() !!}
 @endsection
