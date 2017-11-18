@@ -17,11 +17,7 @@
 
     {!! BootForm::textarea('description') !!}
 
-    {!! BootForm::submit('Save and stay', ['name' => 'saveandstay']) !!}
-
-    {!! BootForm::submit('Save') !!}
-
-    {!! AdminUtil::btnCancel(route('admin.shop.products')) !!}
+    {!! AdminUtil::saveStayCancel(route('admin.languages')) !!}
 
     {!! BootForm::close() !!}
 @endsection

@@ -15,9 +15,7 @@
 
     {!! BootForm::checkbox('is_active', 'Active', 1, ['checked' => true]) !!}
 
-    {!! BootForm::submit('Save') !!}
-
-    {!! AdminUtil::btnCancel(route('admin.languages')) !!}
+    {!! AdminUtil::saveStayCancel(route('admin.languages')) !!}
 
     {!! BootForm::close() !!}
 @endsection

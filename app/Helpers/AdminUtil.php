@@ -2,6 +2,8 @@
 
 namespace App\Helpers;
 
+use Form;
+
 class AdminUtil
 {
     public static function btn($url, $icon, $title = null, $attributes = [], $label = null)
@@ -54,6 +56,21 @@ class AdminUtil
             self::getAttributeHtml($attributes),
             $label
         );
+    }
+
+    public static function saveStayCancel($url_cancel = null)
+    {
+        $html = '<div class="form-group save-bar">';
+
+        $html .= Form::submit('Save', ['class' => 'btn btn-success mr-3']);
+
+        $html .= Form::submit('Save and stay', ['class' => 'btn btn-primary mr-3', 'name' => 'saveandstay']);
+
+        $html .= self::btnCancel($url_cancel);
+
+        $html .= '</div>';
+
+        return $html;
     }
     
     public static function mergeAttributes($array1, $array2)

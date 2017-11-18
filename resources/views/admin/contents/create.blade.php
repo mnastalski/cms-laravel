@@ -11,9 +11,7 @@
 
     {!! BootForm::textarea('content', null, null, ['class' => 'tinymce', 'rows' => 16]) !!}
 
-    {!! BootForm::submit('Save') !!}
-
-    {!! AdminUtil::btnCancel(route('admin.contents')) !!}
+    {!! AdminUtil::saveStayCancel(route('admin.contents')) !!}
 
     {!! BootForm::close() !!}
 @endsection
