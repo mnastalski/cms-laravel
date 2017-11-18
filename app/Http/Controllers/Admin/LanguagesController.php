@@ -38,7 +38,11 @@ class LanguagesController extends AdminController
         $language->fill($request->all());
         $language->save();
 
-        return $this->redirectStore($request, route('admin.languages'));
+        return $this->redirectStore(
+            $request,
+            route('admin.languages'),
+            route('admin.languages.create', [$language->id])
+        );
     }
 
     public function destroy($id)
