@@ -22,11 +22,11 @@ class User extends Authenticatable
 
     protected $fillable = [
         'email',
-        'password',
-        'admin'
+        'password'
     ];
 
     protected $hidden = [
+        'admin',
         'password',
         'remember_token'
     ];
