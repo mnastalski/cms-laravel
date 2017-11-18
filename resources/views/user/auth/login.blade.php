@@ -25,6 +25,11 @@
         </div>
 
         <div class="form-group text-center">
+            {!! Form::checkbox('remember_me', '1', false, ['id' => 'remember_me']) !!}
+            {!! Form::label('remember_me', 'Remember me') !!}
+        </div>
+
+        <div class="form-group text-center">
             {!! Form::submit('Submit', ['class' => 'btn btn-primary']) !!}
         </div>
 
