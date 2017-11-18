@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Content;
 use Illuminate\Http\Request;
+use App\Content;
 
 class ContentsController extends AdminController
 {
@@ -33,24 +33,26 @@ class ContentsController extends AdminController
 
     public function store(Request $request, $id = 0)
     {
+        $content = Content::firstOrNew(['id' => $id]);
+
         $this->validate($request, [
-            'key' => 'required|min:4'
+            'key' => 'required|min:4|unique:' . $content->getTable()
         ]);
 
-        Content::updateOrCreate(
-            ['id' => $id],
-            $request->all()
+        $content->fill($request->all());
+        $content->save();
+
+        return $this->redirectStore(
+            $request,
+            route('admin.content'),
+            route('admin.content.create', [$content->id])
         );
-
-        flash('Saved')->success();
-
-        return redirect()->route('admin.contents');
     }
 
     public function destroy($id)
     {
         Content::destroy($id);
 
-        return redirect()->back();
+        return $this->redirectBack();
     }
 }
