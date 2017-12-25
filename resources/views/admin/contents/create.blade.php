@@ -1,6 +1,6 @@
 @extends('admin.admin')
 
-@section('header', 'Add content section')
+@section('header', ($model_data ? 'Edit' : 'Add') . ' content section')
 
 @section('content_container')
     {!! BootForm::open(['model' => $model_data]) !!}

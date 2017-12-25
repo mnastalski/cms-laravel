@@ -36,7 +36,7 @@ class ContentsController extends AdminController
         $content = Content::firstOrNew(['id' => $id]);
 
         $this->validate($request, [
-            'key' => 'required|min:4|unique:' . $content->getTable()
+            'key' => 'required|min:4' . ($id > 0 && $content->key == $request->key ? '' : '|unique:' . $content->getTable())
         ]);
 
         $content->fill($request->all());
@@ -44,8 +44,8 @@ class ContentsController extends AdminController
 
         return $this->redirectStore(
             $request,
-            route('admin.content'),
-            route('admin.content.create', [$content->id])
+            route('admin.contents'),
+            route('admin.contents.create', [$content->id])
         );
     }
 
